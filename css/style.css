@@ -1,0 +1,66 @@
+/* Regole generali */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* fine regole generali */
+
+/* Macrostruttura */
+#app {
+  height: 100vh;
+}
+
+/* layout default */
+.lay-default {
+  /* regole greed */
+  display: grid;
+  grid-template-columns: minmax(260px, 32%) 68%;
+  grid-template-rows: 59px 1fr 62px;
+  grid-template-areas:
+  "user-info main-default"
+  "contacts main-default"
+  "contacts main-default";
+}
+
+/* layout chat attiva */
+.lay-chat-attiva {
+  /* regole greed */
+  display: grid;
+  grid-template-columns: minmax(260px, 32%) 68%;
+  grid-template-rows: 59px 1fr 62px;
+  grid-template-areas:
+  "user-info chat-info"
+  "contacts chat"
+  "contacts message";
+}
+
+.user-info {
+  grid-area: user-info;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.main-default {
+  grid-area: main-default;
+}
+
+
+.chat-info {
+  grid-area: chat-info;
+}
+
+.chat {
+  grid-area: chat;
+}
+
+.message {
+  grid-area: message;
+}
+
+/* DEBUG:  */
+#app * {
+  border: 1px solid black;
+}
