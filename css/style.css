@@ -31,7 +31,22 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
+/* layout allo start */
+.lay-main-start {
+  /* regole grid */
+  display: grid;
+  grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
+  grid-template-rows: 59px 1fr minmax(62px, auto);
+  grid-template-areas:
+  "user-info main-start"
+  "contacts main-start"
+  "contacts main-start";
+}
+
+/* layout chat attiva */
+.lay-chat-attiva {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
@@ -217,10 +232,39 @@ body {
 
 
 
-/*                                    main default */
+/*                                    main start */
 .main-start {
-
+  grid-area: main-start;
+  background-color: #F8F9FA;
+  text-align: center;
+  overflow: auto;
+  padding: 0 20px 10px 20px;
 }
+
+.main-start img {
+  margin-top: 80px;
+  margin-bottom: 35px;
+  width: 250px;
+  height: 250px;
+}
+
+.main-start h1 {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+
+.main-start p {
+  color: #888989;
+}
+
+/* DEBUG:  */
+.chat-info,
+.chat,
+.message {
+  display: none !important;
+}
+
 
 /*                                     chat info */
 .chat-info {
@@ -281,6 +325,7 @@ body {
 .chat {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
@@ -345,9 +390,3 @@ body {
   border: 0px;
   border-radius: 10px;
 }
-
-
-/* DEBUG:  */
-/* #app * {
-  border: 1px solid black;
-} */
