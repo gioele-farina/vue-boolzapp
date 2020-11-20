@@ -110,6 +110,7 @@ body {
   background-color: #FFFFFF;
 }
 
+/* contacts Alert */
 .contacts-alert {
   height: 80px;
   background-color: #8EDAFC;
@@ -144,6 +145,7 @@ body {
   cursor: pointer;
 }
 
+/* contact search */
 .contacts-search {
   height: 60px;
   padding: 10px;
@@ -167,6 +169,44 @@ body {
 .contacts-search > div input {
   width: 90%;
   border: 0px;
+}
+
+/* contact contatto */
+
+.contatto {
+  padding: 5px;
+  padding-left: 15px;
+  height: 65px;
+  border-bottom: 2px solid #F2F2F2;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.anteprima {
+  flex-grow: 1;
+}
+
+.anteprima h2 {
+  font-size: 20px;
+}
+
+.anteprima p {
+  color: #B6B9BB;
+}
+
+.anteprima-data {
+  width: 95px;
+  font-size: 15px;
+  color: #B6B9BB;
+}
+
+.contatto img {
+  height: 100%;
+  width: auto;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: #F2F2F2;
 }
 
 /* main default */
