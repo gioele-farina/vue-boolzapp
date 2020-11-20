@@ -343,7 +343,7 @@ body {
   min-width: 200px;
   max-width: 260px;
   word-wrap: break-word;
-  margin: 5px 55px;
+  margin: 5px 5%;
   border-radius: 10px;
   padding: 10px;
 }
@@ -420,8 +420,7 @@ body {
 
   .contacts,
   .user-info,
-  .main-start,
-  .chat-info {
+  .main-start {
     display: none;
   }
 
@@ -433,10 +432,12 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 100px 1fr minmax(62px, auto);
     grid-template-areas:
-    "nav"
+    "chat-info"
     "chat"
     "message";
   }
+
+  /* sezione contatti */
 
   .contatto {
     justify-content: flex-start;
@@ -463,5 +464,7 @@ body {
     font-size: 13px;
     z-index: 1;
   }
+
+  /* sezione chat */
 
 }
