@@ -209,6 +209,19 @@ body {
   background-color: #F2F2F2;
 }
 
+.contacts .contatto:last-child {
+  border-bottom: 0;
+}
+
+.contact-active {
+  background-color: #E9EBEB;
+  border-bottom: 0;
+}
+
+.contact-active img{
+  background-color: #F2F2F2;
+}
+
 /* main default */
 .main-default {
   grid-area: main-default;
