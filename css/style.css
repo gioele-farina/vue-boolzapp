@@ -38,7 +38,7 @@ body {
 .lay-default {
   /* regole grid */
   display: grid;
-  grid-template-columns: minmax(260px, 32%) 68%;
+  grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info main-default"
@@ -50,7 +50,7 @@ body {
 .lay-chat-attiva {
   /* regole grid */
   display: grid;
-  grid-template-columns: minmax(260px, 32%) 68%;
+  grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info chat-info"
@@ -73,7 +73,8 @@ body {
 
 .nome-utente {
   height: 100%;
-  width: 75%;
+  /* width: 75%; */
+  width: calc(100% - 90px);
   display: flex;
   align-items: center;
 }
@@ -90,7 +91,7 @@ body {
 }
 
 .impostazioni-utente {
-  width: 25%;
+  width: 90px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -242,6 +243,54 @@ body {
   grid-area: chat-info;
   background-color: #EAEAEA;
   border-left: 2px solid #B1B1B1;
+  padding: 5px;
+  padding-left: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-utente {
+  height: 100%;
+  width: calc(100% - 90px);
+  display: flex;
+  align-items: center;
+}
+
+.chat-utente div {
+  padding-left: 10px;
+  width: 80%;
+}
+
+.chat-utente h2 {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-utente p {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-info img {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+}
+
+.impostazioni-chat {
+  width: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+
+  color: #B1B1B1;
+  font-size: 20px;
 }
 
 /*                                     chat */
