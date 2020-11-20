@@ -39,7 +39,7 @@ body {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
-  grid-template-rows: 59px 1fr 62px;
+  grid-template-rows: 59px 1fr minmax(62px, auto);
   grid-template-areas:
   "user-info main-default"
   "contacts main-default"
@@ -51,7 +51,7 @@ body {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
-  grid-template-rows: 59px 1fr 62px;
+  grid-template-rows: 59px 1fr minmax(62px, auto);
   grid-template-areas:
   "user-info chat-info"
   "contacts chat"
@@ -242,7 +242,7 @@ body {
 .chat-info {
   grid-area: chat-info;
   background-color: #EAEAEA;
-  border-left: 2px solid #B1B1B1;
+  border-left: 1px solid #B1B1B1;
   padding: 5px;
   padding-left: 10px;
 
@@ -303,7 +303,29 @@ body {
 .message {
   grid-area: message;
   background-color: #F3EEEA;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
+
+.message i {
+  width: 100px;
+  font-size: 25px;
+  color: #6B7376;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.message input {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  border: 0px;
+  border-radius: 10px;
+}
+
 
 /* DEBUG:  */
 /* #app * {
