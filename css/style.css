@@ -7,15 +7,37 @@
 /* fine regole generali */
 
 /* Macrostruttura */
-#app {
+body {
   height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.background1 {
+  height: 100px;
+  background-color: #009688;
+}
+
+.background2 {
+  height: calc(100vh - 100px);
+  background-color: #DCDBD1;
+}
+
+/* Macrostruttura applicazione */
+#app {
+  height: 95%;
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* layout default */
+/* WARNING: NON TOCCARE */
 .lay-default {
-  /* regole greed */
+  /* regole grid */
   display: grid;
-  grid-template-columns: minmax(260px, 32%) 68%;
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info main-default"
@@ -25,9 +47,10 @@
 
 /* layout chat attiva */
 .lay-chat-attiva {
-  /* regole greed */
+  /* regole grid */
   display: grid;
-  grid-template-columns: minmax(260px, 32%) 68%;
+  /* grid-template-columns: minmax(260px, 32%) 68%; */
+  grid-template-columns: 32% 68%;
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info chat-info"
@@ -37,10 +60,12 @@
 
 .user-info {
   grid-area: user-info;
+  background-color: #EAEAEA;
 }
 
 .contacts {
   grid-area: contacts;
+  background-color: #FFFFFF;
 }
 
 .main-default {
@@ -50,14 +75,17 @@
 
 .chat-info {
   grid-area: chat-info;
+  background-color: #EAEAEA;
 }
 
 .chat {
   grid-area: chat;
+  background-image: url("../img/mine.jpg");
 }
 
 .message {
   grid-area: message;
+  background-color: #F3EEEA;
 }
 
 /* DEBUG:  */
