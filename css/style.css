@@ -6,7 +6,7 @@
 }
 /* fine regole generali */
 
-/* Macrostruttura */
+/*                    Macrostruttura */
 body {
   height: 100vh;
   width: 100vw;
@@ -23,7 +23,7 @@ body {
   background-color: #DCDBD1;
 }
 
-/* Macrostruttura applicazione */
+/*                  Macrostruttura applicazione */
 #app {
   height: 95%;
   width: 85%;
@@ -38,6 +38,7 @@ body {
 .lay-default {
   /* regole grid */
   display: grid;
+  grid-template-columns: minmax(260px, 32%) 68%;
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info main-default"
@@ -49,8 +50,7 @@ body {
 .lay-chat-attiva {
   /* regole grid */
   display: grid;
-  /* grid-template-columns: minmax(260px, 32%) 68%; */
-  grid-template-columns: 32% 68%;
+  grid-template-columns: minmax(260px, 32%) 68%;
   grid-template-rows: 59px 1fr 62px;
   grid-template-areas:
   "user-info chat-info"
@@ -58,37 +58,113 @@ body {
   "contacts message";
 }
 
+/*               sezioni */
+
+/* user info */
 .user-info {
   grid-area: user-info;
   background-color: #EAEAEA;
+  padding: 5px;
+  padding-left: 10px;
+
+  display: flex;
+  justify-content: space-between;
 }
 
+.nome-utente {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.nome-utente span {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.user-info img {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+}
+
+.impostazioni-utente {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: #B1B1B1;
+  font-size: 20px;
+}
+
+/* contacts */
 .contacts {
   grid-area: contacts;
   background-color: #FFFFFF;
 }
 
+.contacts-alert {
+  height: 80px;
+  background-color: #8EDAFC;
+  display: flex;
+  align-items: center;
+}
+
+.contacts-alert i {
+  display: inline-block;
+  padding: 15px 13px 15px 13px;
+  margin-left: 15px;
+  background-color: white;
+  color: #8EDAFC;
+  border-radius: 50%;
+}
+
+.contacts-alert > div {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.contacts-alert > div h2 {
+  font-size: 18px;
+}
+
+.contacts-alert > div p {
+  text-decoration: underline;
+  color: #4F7485;
+}
+
+.contacts-alert > div p:hover {
+  cursor: pointer;
+}
+
+
+/* main default */
 .main-default {
   grid-area: main-default;
 }
 
-
+/* chat info */
 .chat-info {
   grid-area: chat-info;
   background-color: #EAEAEA;
+  border-left: 2px solid #B1B1B1;
 }
 
+/* chat */
 .chat {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
 }
 
+/* message */
 .message {
   grid-area: message;
   background-color: #F3EEEA;
 }
 
 /* DEBUG:  */
-#app * {
+/* #app * {
   border: 1px solid black;
-}
+} */
