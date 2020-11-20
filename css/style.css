@@ -4,7 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
 /* fine regole generali */
+
+/* stati iniziali */
+nav {
+  display: none;
+}
 
 /*                    Macrostruttura */
 body {
@@ -259,12 +266,14 @@ body {
 }
 
 /* DEBUG:  */
-.chat-info,
+/* .chat-info,
 .chat,
 .message {
   display: none !important;
+} */
+.main-start {
+  display: none;
 }
-
 
 /*                                     chat info */
 .chat-info {
@@ -389,4 +398,70 @@ body {
   padding: 10px;
   border: 0px;
   border-radius: 10px;
+}
+
+/*                             mediaqueries */
+
+@media only screen and (max-width: 1000px) {
+
+  .background1,
+  .background2 {
+    display: none;
+  }
+
+  #app {
+    height: 100%;
+    width: 100%;
+    position: static;
+    transform: translate(0%, 0%);
+  }
+
+@media only screen and (max-width: 680px) {
+
+  .contacts,
+  .user-info,
+  .main-start,
+  .chat-info {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  #app {
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr minmax(62px, auto);
+    grid-template-areas:
+    "nav"
+    "chat"
+    "message";
+  }
+
+  .contatto {
+    justify-content: flex-start;
+  }
+
+  .anteprima {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .anteprima h2 {
+    z-index: 2;
+    /* min-width: 100px; */
+    max-width: 300px;
+    font-size: 18px;
+  }
+
+  .anteprima p {
+    max-width: 175px;
+    z-index: 2;
+  }
+
+  .anteprima-data {
+    font-size: 13px;
+    z-index: 1;
+  }
+
 }
