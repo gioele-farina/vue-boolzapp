@@ -31,23 +31,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-/* layout default */
-/* WARNING: NON TOCCARE */
-.lay-default {
-  /* regole grid */
-  display: grid;
-  grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
-  grid-template-rows: 59px 1fr minmax(62px, auto);
-  grid-template-areas:
-  "user-info main-default"
-  "contacts main-default"
-  "contacts main-default";
-}
-
-/* layout chat attiva */
-.lay-chat-attiva {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
@@ -234,8 +218,8 @@ body {
 
 
 /*                                    main default */
-.main-default {
-  grid-area: main-default;
+.main-start {
+
 }
 
 /*                                     chat info */
@@ -304,20 +288,35 @@ body {
 .messaggio {
   min-width: 200px;
   max-width: 260px;
-  border: 1px solid black;
   word-wrap: break-word;
+  margin: 5px 55px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.messaggio > * {
+.chat .messaggio:first-child {
+  margin-top: 40px;
+}
 
+
+.messaggio-testo {
+
+}
+
+.messaggio-data {
+  font-size: 10px;
+  color: #B6B9BB;
+  text-align: right;
 }
 
 .inviato {
   align-self: flex-end;
+  background-color: #D5F9BA;
 }
 
 .ricevuto {
   align-self: flex-start;
+  background-color: #FFFFFF;
 }
 
 /*                                     message */
