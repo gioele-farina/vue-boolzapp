@@ -297,6 +297,27 @@ body {
 .chat {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
+  display: flex;
+  flex-direction: column;
+}
+
+.messaggio {
+  min-width: 200px;
+  max-width: 260px;
+  border: 1px solid black;
+  word-wrap: break-word;
+}
+
+.messaggio > * {
+
+}
+
+.inviato {
+  align-self: flex-end;
+}
+
+.ricevuto {
+  align-self: flex-start;
 }
 
 /*                                     message */
