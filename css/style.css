@@ -58,9 +58,9 @@ body {
   "contacts message";
 }
 
-/*               sezioni */
+/*                                        SEZIONI */
 
-/* user info */
+/*                                    user info */
 .user-info {
   grid-area: user-info;
   background-color: #EAEAEA;
@@ -104,7 +104,7 @@ body {
   margin-right: 8px;
 }
 
-/* contacts */
+/*                                       contacts */
 .contacts {
   grid-area: contacts;
   background-color: #FFFFFF;
@@ -185,19 +185,27 @@ body {
 
 .anteprima {
   flex-grow: 1;
+  max-width: 50%;
+  padding-right: 8px;
 }
 
 .anteprima h2 {
-  font-size: 20px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .anteprima p {
   color: #B6B9BB;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .anteprima-data {
   width: 95px;
-  font-size: 15px;
+  font-size: 13px;
   color: #B6B9BB;
 }
 
@@ -222,25 +230,27 @@ body {
   background-color: #F2F2F2;
 }
 
-/* main default */
+
+
+/*                                    main default */
 .main-default {
   grid-area: main-default;
 }
 
-/* chat info */
+/*                                     chat info */
 .chat-info {
   grid-area: chat-info;
   background-color: #EAEAEA;
   border-left: 2px solid #B1B1B1;
 }
 
-/* chat */
+/*                                     chat */
 .chat {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
 }
 
-/* message */
+/*                                     message */
 .message {
   grid-area: message;
   background-color: #F3EEEA;
