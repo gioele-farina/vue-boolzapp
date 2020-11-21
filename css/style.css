@@ -15,7 +15,7 @@
 }
 
 nav {
-  display: none !important;
+  /* display: none !important; */
 }
 
 
@@ -536,4 +536,13 @@ body {
 
   /* sezione chat */
 
+  .user-info {
+    background-color: #009688;
+    color: white;
+    font-weight: bold;
+  }
+
+  .impostazioni-utente {
+    color: white;
+  }
 }
