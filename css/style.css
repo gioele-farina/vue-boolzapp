@@ -15,7 +15,7 @@
 }
 
 nav {
-  /* display: none !important; */
+  display: none !important;
 }
 
 
@@ -226,13 +226,19 @@ body {
 }
 
 .anteprima {
+  min-width: 0;
   flex-grow: 1;
-  max-width: 50%;
-  padding-right: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-utente {
+  min-width: 0;
 }
 
 .anteprima h2 {
-  font-size: 18px;
+  font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -247,6 +253,7 @@ body {
 
 .anteprima-data {
   width: 95px;
+  flex-shrink: 0;
   font-size: 13px;
   color: #B6B9BB;
 }
@@ -254,7 +261,7 @@ body {
 .contatto img {
   height: 100%;
   width: auto;
-  margin-right: 15px;
+  margin-right: 10px;
   border-radius: 50%;
   background-color: #F2F2F2;
 }
@@ -271,6 +278,7 @@ body {
 .contact-active img{
   background-color: #F2F2F2;
 }
+
 
 /*                                     chat info */
 .chat-info, nav {
@@ -441,12 +449,12 @@ body {
   }
 
   /* Stati associati da cambiare con js */
-  .user-info,
+  /* .user-info,
   .contacts,
   .main-start,
   .chat-info {
     display: none;
-  }
+  } */
 
   /*                          REGOLE LAYOUT CONTATTI */
   .layout-contatti-mobile {
@@ -458,11 +466,12 @@ body {
     "contacts" !important;
   }
   /* Stati associati da cambiare con js */
-  /* .main-start,
+  .main-start,
   .main-chat-attiva,
-  .contacts-alert {
+  .contacts-alert,
+  nav {
     display: none;
-  } */
+  }
 
   /*                       regole nav */
 
@@ -513,30 +522,16 @@ body {
   /*                       Regole sezioni */
 
   /* sezione contatti */
-  .contatto {
-    justify-content: flex-start;
-  }
-
-  .anteprima {
-    max-width: 100%;
-    overflow: hidden;
-  }
 
   .anteprima h2 {
-    /* z-index: 2; */
-    /* min-width: 100px; */
-    max-width: 300px;
     font-size: 18px;
   }
 
   .anteprima p {
-    max-width: 175px;
-    /* z-index: 2; */
   }
 
   .anteprima-data {
     font-size: 13px;
-    /* z-index: 1; */
   }
 
   /* sezione chat */
