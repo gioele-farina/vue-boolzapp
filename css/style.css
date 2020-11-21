@@ -14,6 +14,11 @@
   /* display: none !important; */
 }
 
+nav {
+  /* display: none; */
+}
+
+
 /* fine regole generali */
 
 
@@ -31,7 +36,7 @@ body {
 
 .background2 {
   height: calc(100vh - 100px);
-  background-color: #DCDBD1;
+  background-color: #009688;
 }
 
 /*                  Macrostruttura applicazione */
@@ -268,7 +273,7 @@ body {
 }
 
 /*                                     chat info */
-.chat-info {
+.chat-info, nav {
   grid-area: chat-info;
   background-color: #EAEAEA;
   border-left: 1px solid #B1B1B1;
@@ -305,7 +310,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.chat-info img {
+.chat-info img, nav img {
   height: 100%;
   width: auto;
   border-radius: 50%;
@@ -411,7 +416,7 @@ body {
 
 @media only screen and (max-width: 700px) {
 
-  /*                       Regole layout */
+  /*                       REGOLE LAYOUT CHAT*/
   .layout-chat-mobile {
     grid-template-columns: 100%  !important;
     grid-template-rows: 59px 1fr minmax(62px, auto) !important;
@@ -420,13 +425,29 @@ body {
     "main"
     "main" !important;
   }
-  /* Stati associati da cambiare con js */
-  /* .user-info,
-  .contacts,
-  .main-start {
-    display: none;
-  } */
 
+  .main-chat-attiva {
+    grid-area: main;
+
+    /* regole grid */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 59px 1fr minmax(62px, auto);
+    grid-template-areas:
+    "nav"
+    "chat"
+    "message";
+  }
+
+  /* Stati associati da cambiare con js */
+  .user-info,
+  .contacts,
+  .main-start,
+  .chat-info {
+    display: none;
+  }
+
+  /*                          REGOLE LAYOUT CONTATTI */
   .layout-contatti-mobile {
     grid-template-columns: 100%  !important;
     grid-template-rows: 59px 1fr minmax(62px, auto) !important;
@@ -436,16 +457,35 @@ body {
     "contacts" !important;
   }
   /* Stati associati da cambiare con js */
-  .main-start,
-  .main-chat-attiva {
+  /* .main-start,
+  .main-chat-attiva,
+  .contacts-alert {
     display: none;
+  } */
+
+  /*                       regole nav */
+
+  nav {
+    grid-area: nav;
+    border-left: 0;
+    background-color: #009688;
+    color: white;
+    font-weight: bold;
+  }
+
+  nav .chat-utente h2 {
+    font-size: 20px;
+  }
+
+  nav .chat-utente p {
+    font-size: 13px;
+  }
+
+  nav .impostazioni-chat {
+    color: white;
   }
 
   /*                       Regole sezioni */
-  /* sezione user info */
-  .chat-info {
-    border-left: 0;
-  }
 
   /* sezione contatti */
   .contatto {
