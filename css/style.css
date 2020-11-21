@@ -397,7 +397,8 @@ body {
 @media only screen and (max-width: 1000px) {
 
   .background1,
-  .background2 {
+  .background2,
+  .main-start {
     display: none;
   }
 
@@ -408,10 +409,45 @@ body {
     transform: translate(0%, 0%);
   }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 700px) {
+
+  /*                       Regole layout */
+  .layout-chat-mobile {
+    grid-template-columns: 100%  !important;
+    grid-template-rows: 59px 1fr minmax(62px, auto) !important;
+    grid-template-areas:
+    "main"
+    "main"
+    "main" !important;
+  }
+  /* Stati associati da cambiare con js */
+  /* .user-info,
+  .contacts,
+  .main-start {
+    display: none;
+  } */
+
+  .layout-contatti-mobile {
+    grid-template-columns: 100%  !important;
+    grid-template-rows: 59px 1fr minmax(62px, auto) !important;
+    grid-template-areas:
+    "user-info"
+    "contacts"
+    "contacts" !important;
+  }
+  /* Stati associati da cambiare con js */
+  .main-start,
+  .main-chat-attiva {
+    display: none;
+  }
+
+  /*                       Regole sezioni */
+  /* sezione user info */
+  .chat-info {
+    border-left: 0;
+  }
 
   /* sezione contatti */
-
   .contatto {
     justify-content: flex-start;
   }
@@ -422,7 +458,7 @@ body {
   }
 
   .anteprima h2 {
-    z-index: 2;
+    /* z-index: 2; */
     /* min-width: 100px; */
     max-width: 300px;
     font-size: 18px;
@@ -430,12 +466,12 @@ body {
 
   .anteprima p {
     max-width: 175px;
-    z-index: 2;
+    /* z-index: 2; */
   }
 
   .anteprima-data {
     font-size: 13px;
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   /* sezione chat */
