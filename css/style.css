@@ -418,17 +418,29 @@ body {
 
 @media only screen and (max-width: 680px) {
 
-  .contacts,
-  .user-info,
-  .main-start {
-    display: none;
-  }
 
+  #app {
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    "nav"
+    "contacts";
+  }
+  /* schermata contatti stato delle sezioni*/
   nav {
     display: block;
   }
 
-  #app {
+  .user-info,
+  .main-start,
+  .chat-info,
+  .chat,
+  .message {
+    display: none;
+  }
+
+
+  .chat-mobile {
     grid-template-columns: 100%;
     grid-template-rows: 100px 1fr minmax(62px, auto);
     grid-template-areas:
@@ -436,6 +448,8 @@ body {
     "chat"
     "message";
   }
+  /* stato delle sezioni */
+
 
   /* sezione contatti */
 
@@ -468,3 +482,18 @@ body {
   /* sezione chat */
 
 }
+
+/*
+Stati possibili del layout:
+DESKTOP:
+#app: lay-main-start
+sezioni: .chat-info, chat, message, nav invisible
+
+lay-chat-attiva
+#app: lay-main-start
+sezioni: .main-start nav invisible
+
+RESPONSIVE:
+
+
+*/
