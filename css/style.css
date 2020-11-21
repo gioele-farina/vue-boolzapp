@@ -5,13 +5,17 @@
   box-sizing: border-box;
 }
 
+/* STATI DEL LAYOUT */
+.main-start {
+  display: none !important;
+}
+
+.main-chat-attiva {
+  /* display: none !important; */
+}
 
 /* fine regole generali */
 
-/* stati iniziali */
-nav {
-  display: none;
-}
 
 /*                    Macrostruttura */
 body {
@@ -38,34 +42,60 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-/* layout allo start */
-.lay-main-start {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
   grid-template-rows: 59px 1fr minmax(62px, auto);
   grid-template-areas:
-  "user-info main-start"
-  "contacts main-start"
-  "contacts main-start";
+  "user-info main"
+  "contacts main"
+  "contacts main";
 }
 
-/* layout chat attiva */
-.lay-chat-attiva {
+/* layout main chat attiva */
+.main-chat-attiva {
+  grid-area: main;
+
   /* regole grid */
   display: grid;
-  grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
+  grid-template-columns: 100%;
   grid-template-rows: 59px 1fr minmax(62px, auto);
   grid-template-areas:
-  "user-info chat-info"
-  "contacts chat"
-  "contacts message";
+  "chat-info"
+  "chat"
+  "message";
 }
 
 /*                                        SEZIONI */
 
+/* SEZIONE MAIN START */
+.main-start {
+  grid-area: main;
+  background-color: #F8F9FA;
+  text-align: center;
+  overflow: auto;
+  padding: 0 20px 10px 20px;
+}
+
+.main-start img {
+  margin-top: 80px;
+  margin-bottom: 35px;
+  width: 250px;
+  height: 250px;
+}
+
+.main-start h1 {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+
+.main-start p {
+  color: #888989;
+}
+
+/* SEZIONE MAIN CHAT ATTIVA */
 /*                                    user info */
 .user-info {
   grid-area: user-info;
@@ -237,44 +267,6 @@ body {
   background-color: #F2F2F2;
 }
 
-
-
-/*                                    main start */
-.main-start {
-  grid-area: main-start;
-  background-color: #F8F9FA;
-  text-align: center;
-  overflow: auto;
-  padding: 0 20px 10px 20px;
-}
-
-.main-start img {
-  margin-top: 80px;
-  margin-bottom: 35px;
-  width: 250px;
-  height: 250px;
-}
-
-.main-start h1 {
-  font-size: 50px;
-  font-weight: lighter;
-}
-
-
-.main-start p {
-  color: #888989;
-}
-
-/* DEBUG:  */
-/* .chat-info,
-.chat,
-.message {
-  display: none !important;
-} */
-.main-start {
-  display: none;
-}
-
 /*                                     chat info */
 .chat-info {
   grid-area: chat-info;
@@ -418,39 +410,6 @@ body {
 
 @media only screen and (max-width: 680px) {
 
-
-  #app {
-    grid-template-columns: 100%;
-    grid-template-rows: 100px 1fr;
-    grid-template-areas:
-    "nav"
-    "contacts";
-  }
-  /* schermata contatti stato delle sezioni*/
-  nav {
-    display: block;
-  }
-
-  .user-info,
-  .main-start,
-  .chat-info,
-  .chat,
-  .message {
-    display: none;
-  }
-
-
-  .chat-mobile {
-    grid-template-columns: 100%;
-    grid-template-rows: 100px 1fr minmax(62px, auto);
-    grid-template-areas:
-    "chat-info"
-    "chat"
-    "message";
-  }
-  /* stato delle sezioni */
-
-
   /* sezione contatti */
 
   .contatto {
@@ -482,18 +441,3 @@ body {
   /* sezione chat */
 
 }
-
-/*
-Stati possibili del layout:
-DESKTOP:
-#app: lay-main-start
-sezioni: .chat-info, chat, message, nav invisible
-
-lay-chat-attiva
-#app: lay-main-start
-sezioni: .main-start nav invisible
-
-RESPONSIVE:
-
-
-*/

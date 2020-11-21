@@ -24,7 +24,7 @@
 
     <!-- app vue -->
     <!-- lay-chat-attiva lay-main-start-->
-    <div id="app" class="lay-chat-attiva">
+    <div id="app">
 
       <!-- User info -->
       <div class="user-info">
@@ -102,74 +102,75 @@
       </div>
 
       <!-- main start -->
-      <!-- Quando attivo questa le altre sotto vanno in display none -->
       <main class="main-start">
         <img src="img/img-avvio.jpg" alt="">
         <h1>Mantieni il telefono connesso</h1>
         <p>WhatsApp si collega al tuo telefono per sincronizzare i messaggi.<br>Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</p>
       </main>
 
-      <!-- chat info -->
-      <div class="chat-info">
+      <!-- main chat attiva -->
+      <main class="main-chat-attiva">
 
-        <!-- variabile in base all'utente selezionato -->
-        <div class="chat-utente">
-          <img src="img/avatar_2.jpg" alt="">
-          <div>
-            <h2>Jessico calcetto</h2>
-            <p>Ultimo accesso oggi alle 20/11/2020 12.04</p>
+        <!-- chat info -->
+        <div class="chat-info">
+
+          <!-- variabile in base all'utente selezionato -->
+          <div class="chat-utente">
+            <img src="img/avatar_2.jpg" alt="">
+            <div>
+              <h2>Jessico calcetto</h2>
+              <p>Ultimo accesso oggi alle 20/11/2020 12.04</p>
+            </div>
           </div>
+
+          <!-- parte fissa -->
+          <div class="impostazioni-chat">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
+
         </div>
 
-        <!-- parte fissa -->
-        <div class="impostazioni-chat">
-          <i class="fas fa-search"></i>
-          <i class="fas fa-paperclip"></i>
-          <i class="fas fa-ellipsis-v"></i>
+        <!-- chat -->
+        <div class="chat">
+
+          <!-- messaggio inviato esempio -->
+          <div class="messaggio inviato">
+            <p class="messaggio-testo">Messaggio aggio aggiaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffffo</p>
+            <p class="messaggio-data">20/11/2020 00.00</p>
+          </div>
+
+          <!-- messaggio ricevuto esempio -->
+          <div class="messaggio ricevuto">
+            <p class="messaggio-testo">Messaggio</p>
+            <p class="messaggio-data">20/11/2 00.00</p>
+          </div>
+
+          <div class="messaggio ricevuto">
+            <p class="messaggio-testo">Messaggio</p>
+            <p class="messaggio-data">20/11/2 00.00</p>
+          </div>
+
+          <div class="messaggio inviato">
+            <p class="messaggio-testo">Messaggio aggio aggio</p>
+            <p class="messaggio-data">20/11/2020 00.00</p>
+          </div>
+
         </div>
 
-
-      </div>
-
-      <!-- chat -->
-      <div class="chat">
-
-        <!-- messaggio inviato esempio -->
-        <div class="messaggio inviato">
-          <p class="messaggio-testo">Messaggio aggio aggiaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffffo</p>
-          <p class="messaggio-data">20/11/2020 00.00</p>
+        <!-- message -->
+        <div class="message">
+          <i class="far fa-smile"></i>
+          <!-- ridimensionare l'input da js in base alla lunghezza del testo -->
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <i class="fas fa-microphone"></i>
         </div>
 
-        <!-- messaggio ricevuto esempio -->
-        <div class="messaggio ricevuto">
-          <p class="messaggio-testo">Messaggio</p>
-          <p class="messaggio-data">20/11/2 00.00</p>
-        </div>
-
-        <div class="messaggio ricevuto">
-          <p class="messaggio-testo">Messaggio</p>
-          <p class="messaggio-data">20/11/2 00.00</p>
-        </div>
-
-        <div class="messaggio inviato">
-          <p class="messaggio-testo">Messaggio aggio aggio</p>
-          <p class="messaggio-data">20/11/2020 00.00</p>
-        </div>
-
-      </div>
-
-      <!-- message -->
-      <div class="message">
-        <i class="far fa-smile"></i>
-        <!-- ridimensionare l'input da js in base alla lunghezza del testo -->
-        <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
-      </div>
+      </main>
 
       <!-- responsive -->
-      <nav>
-
-      </nav>
 
     </div>
   <script type="text/javascript" src="js/script.js"></script>
