@@ -30,8 +30,8 @@
       <div class="user-info" v-if="userInfo">
 
         <div class="nome-utente">
-          <img src="img/avatar_io.jpg" alt="">
-          <span>Piero Puzzola</span>
+          <img :src="meInfo.avatar">
+          <span>{{ meInfo.nome }} {{ meInfo.cognome }}</span>
         </div>
 
         <div class="impostazioni-utente">

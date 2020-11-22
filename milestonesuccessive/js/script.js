@@ -19,7 +19,7 @@ var app =new Vue({
       avatar: "img/avatar_io.jpg",
       ultimoAcceso: "Ora", //poi prendo il dato da funzione data
       nome: "Alberto",
-      cognome: "GianGiangela"
+      cognome: "Gian Giangela"
     },
 
     contatti: [
