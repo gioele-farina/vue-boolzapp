@@ -13,6 +13,7 @@ var app =new Vue({
     chatInfo: true,
     // flags
     statoMain: "",
+    utenteAttivo: "",
 
     // DATI
     meInfo: {
@@ -84,7 +85,7 @@ var app =new Vue({
               data: "19/11/20 16:48"
             },
           ],
-        attivo: false
+        attivo: true
       },
 
       {
@@ -125,6 +126,9 @@ var app =new Vue({
 
   mounted: function () {
     this.$nextTick(function () {
+
+      // WARNING:
+      this.utenteAttivo = app.contatti[1];
 
       // GESTIONE STATI INIZIALI
       this.nav = false;
