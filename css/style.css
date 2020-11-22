@@ -7,7 +7,7 @@
 
 /* STATI DEL LAYOUT */
 .main-start {
-  display: none !important;
+  /* display: none !important; */
 }
 
 .main-chat-attiva {
@@ -15,7 +15,7 @@
 }
 
 nav {
-  /* display: none !important; */
+  display: none !important;
 }
 
 
@@ -47,7 +47,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
+/* da applicare ad #app */
+.layout-desktop {
   /* regole grid */
   display: grid;
   grid-template-columns: minmax(260px, 32%) minmax(400px, 68%);
@@ -411,8 +414,7 @@ body {
 @media only screen and (max-width: 1000px) {
 
   .background1,
-  .background2,
-  .main-start {
+  .background2 {
     display: none;
   }
 
@@ -427,12 +429,12 @@ body {
 
   /*                       REGOLE LAYOUT CHAT*/
   .layout-chat-mobile {
-    grid-template-columns: 100%  !important;
-    grid-template-rows: 59px 1fr minmax(62px, auto) !important;
+    grid-template-columns: 100%;
+    grid-template-rows: 59px 1fr minmax(62px, auto);
     grid-template-areas:
     "main"
     "main"
-    "main" !important;
+    "main";
   }
 
   .main-chat-attiva {
@@ -458,20 +460,20 @@ body {
 
   /*                          REGOLE LAYOUT CONTATTI */
   .layout-contatti-mobile {
-    grid-template-columns: 100%  !important;
-    grid-template-rows: 59px 1fr minmax(62px, auto) !important;
+    grid-template-columns: 100%;
+    grid-template-rows: 59px 1fr minmax(62px, auto);
     grid-template-areas:
     "user-info"
     "contacts"
-    "contacts" !important;
+    "contacts";
   }
   /* Stati associati da cambiare con js */
-  .main-start,
+  /* .main-start,
   .main-chat-attiva,
   .contacts-alert,
   nav {
     display: none;
-  }
+  } */
 
   /*                       regole nav */
 

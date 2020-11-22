@@ -23,11 +23,11 @@
     <div class="background2"></div>
 
     <!-- app vue -->
-    <!-- layout-contatti-mobile layout-chat-mobile-->
-    <div id="app" class="layout-contatti-mobile">
+    <!-- layout-desktop layout-contatti-mobile layout-chat-mobile-->
+    <div id="app" :class="layoutApp">
 
       <!-- User info -->
-      <div class="user-info">
+      <div class="user-info" v-if="userInfo">
 
         <div class="nome-utente">
           <img src="img/avatar_io.jpg" alt="">
@@ -43,10 +43,10 @@
       </div>
 
       <!-- contacts -->
-      <div class="contacts">
+      <div class="contacts" v-if="contacts">
 
         <!-- alert -->
-        <div class="contacts-alert">
+        <div class="contacts-alert" v-if="contactsAlert">
 
           <i class="fas fa-bell-slash"></i>
           <div>
@@ -125,17 +125,17 @@
       </div>
 
       <!-- main start -->
-      <main class="main-start">
+      <main class="main-start" v-if="schermataMaim === 'start'">
         <img src="img/img-avvio.jpg" alt="">
         <h1>Mantieni il telefono connesso</h1>
         <p>WhatsApp si collega al tuo telefono per sincronizzare i messaggi.<br>Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</p>
       </main>
 
       <!-- main chat attiva -->
-      <main class="main-chat-attiva">
+      <main class="main-chat-attiva" v-if="schermataMaim === 'chat'">
 
         <!-- chat info -->
-        <div class="chat-info">
+        <div class="chat-info" v-if="chatInfo">
 
           <!-- variabile in base all'utente selezionato -->
           <div class="chat-utente">
