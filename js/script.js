@@ -6,7 +6,7 @@ var app =new Vue({
     // MACROSEZIONE MAIN (start chat)
     schermataMaim: "chat",
     // SEZIONI (booleane)
-    nav: true,
+    nav: false,
     contactsAlert: true,
     userInfo: true,
     contacts: true,
@@ -15,8 +15,36 @@ var app =new Vue({
 
   mounted: function () {
     this.$nextTick(function () {
+      let pageW = document.documentElement.clientWidth;
+
+
+
+      // GESTIONE STATI INIZIALI
       this.nav = false;
       // this.schermataMaim = "start";
+
+      if (pageW <= 700) {
+
+      }
+
+
+      // GESTIONE RESIZE
+      // Mobile
+      window.addEventListener('resize', function(){
+        if (pageW <= 700 ) {
+          app.layoutApp = "layout-contatti-mobile";
+          app.schermataMaim = false;
+          app.contactsAlert = false;
+          app.nav = false;
+        } else {
+          app.layoutApp = "layout-desktop";
+          app.schermataMaim = "chat";
+          app.contactsAlert = true;
+          app.nav = false;
+        }
+
+      });
+
     })
   },
 

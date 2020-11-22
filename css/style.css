@@ -15,7 +15,7 @@
 }
 
 nav {
-  display: none !important;
+  /* display: none !important; */
 }
 
 
@@ -429,6 +429,7 @@ body {
 
   /*                       REGOLE LAYOUT CHAT*/
   .layout-chat-mobile {
+    display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 59px 1fr minmax(62px, auto);
     grid-template-areas:
@@ -460,6 +461,7 @@ body {
 
   /*                          REGOLE LAYOUT CONTATTI */
   .layout-contatti-mobile {
+    display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 59px 1fr minmax(62px, auto);
     grid-template-areas:
