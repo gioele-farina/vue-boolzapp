@@ -47,6 +47,11 @@ var app =new Vue({
       app.schermataMaim = false;
       app.contactsAlert = false;
       app.nav = false;
+
+      app.userInfo = true;
+      app.contacts = true;
+      app.chatInfo = false;
+
     },
 
     layoutChatMobile: function(){
@@ -85,12 +90,14 @@ var app =new Vue({
       if (document.documentElement.clientWidth <= 700 ) {
         app.layoutChatMobile();
       } else {
-        // app.schermataMaim = "chat";
         app.layoutDesktop();
       }
 
-
       // Aggiungere la selezione della giusta chat
+    },
+
+    mobileBackToContacts: function(){
+      app.layoutMobileContacts();
     }
 
   }
