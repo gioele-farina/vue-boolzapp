@@ -11,6 +11,7 @@ var app =new Vue({
     userInfo: true,
     contacts: true,
     chatInfo: true,
+    // flags
     statoMain: ""
   },
 
@@ -29,7 +30,12 @@ var app =new Vue({
       // GESTIONE RESIZE
       // Mobile
       window.addEventListener('resize', function(){
-        app.mobileContacts();
+        if (app.layoutApp !== "layout-chat-mobile") {
+          app.mobileContacts();
+        } else { //se sono in mobile e apro una chat
+          app.showChat();
+        }
+
       });
 
     })
