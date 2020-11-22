@@ -65,61 +65,17 @@
         </div>
 
         <!-- struttura contatto -->
-        <div class="contatto" @click="showChat">
-
+        <!-- <div :class="['contatto' ,{contact-active: contatto.active === true}]" @click="showChat" v-for="(contatto, i) in contatti"> -->
+        <div @click="showChat" v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]">
           <div class="anteprima">
-            <img src="img/avatar_1.jpg" alt="">
+            <img :src="contatto.avatar">
             <div class="info-utente">
-              <h2>Jessico calcetto</h2>
-              <p>Bababbilla bababà</p>
+              <h2>{{ contatto.nome }} {{ contatto.cognome }}</h2>
+              <p>{{ contatto.chat[contatto.chat.length -1].messaggio }}</p>
             </div>
           </div>
 
-          <p class="anteprima-data">20/11/20 10.52</p>
-
-        </div>
-
-
-        <div class="contatto contact-active " @click="showChat">
-
-          <div class="anteprima">
-            <img src="img/avatar_1.jpg" alt="">
-            <div class="info-utente">
-              <h2>Almilcane del Valle Cognome</h2>
-              <p>Ciao sono molto calda ma calda malda ma di un caldo che porca paletta</p>
-            </div>
-          </div>
-
-          <p class="anteprima-data">20/11/20 10.52</p>
-
-        </div>
-
-        <div class="contatto" @click="showChat">
-
-          <div class="anteprima">
-            <img src="img/avatar_1.jpg" alt="">
-            <div class="info-utente">
-              <h2>Jessico calcetto</h2>
-              <p>Bababbilla bababà</p>
-            </div>
-          </div>
-
-          <p class="anteprima-data">20/11/20 10.52</p>
-
-        </div>
-
-        <div class="contatto" @click="showChat">
-
-          <div class="anteprima">
-            <img src="img/avatar_1.jpg" alt="">
-            <div class="info-utente">
-              <h2>Jessico calcetto</h2>
-              <p>Bababbilla bababà</p>
-            </div>
-          </div>
-
-          <p class="anteprima-data">20/11/20 10.52</p>
-
+          <p class="anteprima-data">{{ contatto.ultimoAcceso }}</p>
         </div>
 
       </div>

@@ -57,7 +57,7 @@ var app =new Vue({
               data: "19/11/20 16:50"
             }
           ],
-        active: false
+        attivo: false
       },
 
       {
@@ -84,7 +84,7 @@ var app =new Vue({
               data: "19/11/20 16:48"
             },
           ],
-        active: false
+        attivo: false
       },
 
       {
@@ -116,7 +116,7 @@ var app =new Vue({
               data: "19/11/20 16:50"
             }
           ],
-        active: false
+        attivo: false
       }
 
     ]
