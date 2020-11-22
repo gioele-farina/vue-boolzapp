@@ -70,7 +70,7 @@ var app =new Vue({
         chat:
           [
             {
-              messaggio : "“Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
+              messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
               mittente: "ricevuto",
               data: "19/11/20 16:48"
             },

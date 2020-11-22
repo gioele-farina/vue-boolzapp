@@ -115,27 +115,23 @@
         <!-- chat -->
         <div class="chat">
 
+          <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]">
+            <p class="messaggio-testo">{{ message.messaggio }}</p>
+            <p class="messaggio-data">{{ message.data }}</p>
+          </div>
+
+
           <!-- messaggio inviato esempio -->
-          <div class="messaggio inviato">
+          <!-- <div class="messaggio inviato">
             <p class="messaggio-testo">Messaggio aggio aggiaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffffo</p>
             <p class="messaggio-data">20/11/2020 00.00</p>
-          </div>
+          </div> -->
 
           <!-- messaggio ricevuto esempio -->
-          <div class="messaggio ricevuto">
+          <!-- <div class="messaggio ricevuto">
             <p class="messaggio-testo">Messaggio</p>
             <p class="messaggio-data">20/11/2 00.00</p>
-          </div>
-
-          <div class="messaggio ricevuto">
-            <p class="messaggio-testo">Messaggio</p>
-            <p class="messaggio-data">20/11/2 00.00</p>
-          </div>
-
-          <div class="messaggio inviato">
-            <p class="messaggio-testo">Messaggio aggio aggio</p>
-            <p class="messaggio-data">20/11/2020 00.00</p>
-          </div>
+          </div> -->
 
         </div>
 
