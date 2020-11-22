@@ -28,7 +28,6 @@ var app =new Vue({
       }
 
       // GESTIONE RESIZE
-      // Mobile
       window.addEventListener('resize', function(){
         if (app.layoutApp !== "layout-chat-mobile") {
           app.mobileContacts();
@@ -42,35 +41,55 @@ var app =new Vue({
   },
 
   methods: {
+    // STATI DEL LAYOUT
+    layoutMobileContacts: function(){
+      app.layoutApp = "layout-contatti-mobile";
+      app.schermataMaim = false;
+      app.contactsAlert = false;
+      app.nav = false;
+    },
 
+    layoutChatMobile: function(){
+      app.layoutApp = "layout-chat-mobile";
+      app.nav = true;
+      app.schermataMaim = "chat";
+      app.contactsAlert = false;
+      app.userInfo = false;
+      app.contacts = false;
+      app.chatInfo = false;
+    },
+
+    layoutDesktop: function(){
+      app.layoutApp = "layout-desktop";
+      app.schermataMaim = app.statoMain;
+      app.contactsAlert = true;
+      app.nav = false;
+      app.userInfo = true;
+      app.contacts = true;
+      app.chatInfo = true;
+    },
+
+    // AZIONI SUL LAYOUT
     mobileContacts: function () {
+      // Mostra versione mobile se necessario o ritorna a come prima
       if (document.documentElement.clientWidth <= 700 ) {
-        app.layoutApp = "layout-contatti-mobile";
-        app.schermataMaim = false;
-        app.contactsAlert = false;
-        app.nav = false;
+        app.layoutMobileContacts();
       } else {
-        app.layoutApp = "layout-desktop";
-        app.schermataMaim = app.statoMain;
-        app.contactsAlert = true;
-        app.nav = false;
+        app.layoutDesktop();
       }
     },
 
     showChat: function (){
       app.statoMain = "chat";
       // se clicco sui contatti
-      if (document.documentElement.clientWidth > 700 ) {
-        app.schermataMaim = "chat";
+      if (document.documentElement.clientWidth <= 700 ) {
+        app.layoutChatMobile();
       } else {
-        app.layoutApp = "layout-chat-mobile";
-        app.nav = true;
-        app.schermataMaim = "chat";
-        app.contactsAlert = false;
-        app.userInfo = false;
-        app.contacts = false;
-        app.chatInfo = false;
+        // app.schermataMaim = "chat";
+        app.layoutDesktop();
       }
+
+
       // Aggiungere la selezione della giusta chat
     }
 
