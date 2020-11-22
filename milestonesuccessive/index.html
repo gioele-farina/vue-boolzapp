@@ -156,10 +156,10 @@
               <i class="fas fa-arrow-left"></i>
             </div>
             <!-- parte variabile -->
-            <img src="img/avatar_4.jpg" alt="">
+            <img :src="utenteAttivo.avatar">
             <div class="info-utente">
-              <h2>Jessico calcetto</h2>
-              <p>Ultimo accesso oggi alle 20/11/2020 12.04</p>
+              <h2>{{ utenteAttivo.nome }} {{ utenteAttivo.cognome }}</h2>
+              <p>{{ utenteAttivo.ultimoAcceso }}</p>
             </div>
           </div>
 
