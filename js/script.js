@@ -15,34 +15,19 @@ var app =new Vue({
 
   mounted: function () {
     this.$nextTick(function () {
-      let pageW = document.documentElement.clientWidth;
-
-
 
       // GESTIONE STATI INIZIALI
       this.nav = false;
       // this.schermataMaim = "start";
 
-      if (pageW <= 700) {
-
+      if (document.documentElement.clientWidth <= 700) {
+        app.mobileContacts();
       }
-
 
       // GESTIONE RESIZE
       // Mobile
       window.addEventListener('resize', function(){
-        if (pageW <= 700 ) {
-          app.layoutApp = "layout-contatti-mobile";
-          app.schermataMaim = false;
-          app.contactsAlert = false;
-          app.nav = false;
-        } else {
-          app.layoutApp = "layout-desktop";
-          app.schermataMaim = "chat";
-          app.contactsAlert = true;
-          app.nav = false;
-        }
-
+        app.mobileContacts();
       });
 
     })
@@ -50,5 +35,20 @@ var app =new Vue({
 
   methods: {
 
+    mobileContacts: function () {
+      if (document.documentElement.clientWidth <= 700 ) {
+        app.layoutApp = "layout-contatti-mobile";
+        app.schermataMaim = false;
+        app.contactsAlert = false;
+        app.nav = false;
+      } else {
+        app.layoutApp = "layout-desktop";
+        app.schermataMaim = "chat";
+        app.contactsAlert = true;
+        app.nav = false;
+      }
+    }
   }
+
+
 });
