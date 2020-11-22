@@ -10,7 +10,8 @@ var app =new Vue({
     contactsAlert: true,
     userInfo: true,
     contacts: true,
-    chatInfo: true
+    chatInfo: true,
+    statoMain: ""
   },
 
   mounted: function () {
@@ -18,7 +19,8 @@ var app =new Vue({
 
       // GESTIONE STATI INIZIALI
       this.nav = false;
-      // this.schermataMaim = "start";
+      this.schermataMaim = "start";
+      app.statoMain = "start";
 
       if (document.documentElement.clientWidth <= 700) {
         app.mobileContacts();
@@ -43,11 +45,29 @@ var app =new Vue({
         app.nav = false;
       } else {
         app.layoutApp = "layout-desktop";
-        app.schermataMaim = "chat";
+        app.schermataMaim = app.statoMain;
         app.contactsAlert = true;
         app.nav = false;
       }
+    },
+
+    showChat: function (){
+      app.statoMain = "chat";
+      // se clicco sui contatti
+      if (document.documentElement.clientWidth > 700 ) {
+        app.schermataMaim = "chat";
+      } else {
+        app.layoutApp = "layout-chat-mobile";
+        app.nav = true;
+        app.schermataMaim = "chat";
+        app.contactsAlert = false;
+        app.userInfo = false;
+        app.contacts = false;
+        app.chatInfo = false;
+      }
+      // Aggiungere la selezione della giusta chat
     }
+
   }
 
 
