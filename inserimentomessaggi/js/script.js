@@ -259,19 +259,21 @@ var app =new Vue({
     },
 
     scrivi: function(){
-      // inserisco il nuovo messaggio
-      let messaggio =
-      {
-        messaggio: app.messaggioInserito,
-        mittente: "inviato",
-        data: app.ottieniData()
-      };
-      app.$set(app.utenteAttivo.chat, app.utenteAttivo.chat.length, messaggio);
-      // pulisco il prompt
-      app.messaggioInserito = "";
+      if (app.messaggioInserito !== "") {
+        // inserisco il nuovo messaggio
+        let messaggio =
+        {
+          messaggio: app.messaggioInserito,
+          mittente: "inviato",
+          data: app.ottieniData()
+        };
+        app.$set(app.utenteAttivo.chat, app.utenteAttivo.chat.length, messaggio);
+        // pulisco il prompt
+        app.messaggioInserito = "";
 
-      // avvio risposta automatica
-      app.riceviRisposta();
+        // avvio risposta automatica
+        app.riceviRisposta();
+      }
     },
 
     riceviRisposta: function(){
