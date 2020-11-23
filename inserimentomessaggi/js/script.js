@@ -35,6 +35,11 @@ var app =new Vue({
         chat:
           [
             {
+              messaggio : "",
+              mittente: "msgCookie",
+              data: ""
+            },
+            {
               messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
               mittente: "ricevuto",
               data: "19/11/20 16:48"
@@ -62,6 +67,11 @@ var app =new Vue({
         ultimoAcceso: "20/11/20 23.52",
         chat:
           [
+            {
+              messaggio : "",
+              mittente: "msgCookie",
+              data: ""
+            },
             {
               messaggio : "Ciao ho sentito il tuo disco. E' assolutamente ridicolo. Non mi scrivere mai più.",
               mittente: "ricevuto",
@@ -100,6 +110,11 @@ var app =new Vue({
         ultimoAcceso: "20/11/20 23.52",
         chat:
           [
+            {
+              messaggio : "",
+              mittente: "msgCookie",
+              data: ""
+            },
             {
               messaggio : "Hanno catturato Maccio, Alberto! Dobbiamo fare qualcosa!",
               mittente: "ricevuto",
@@ -350,7 +365,10 @@ var app =new Vue({
           contatto.visibile = false;
         }
       });
+    },
 
+    deleteMessage: function(index){
+      app.$delete(app.utenteAttivo.chat, index);
     }
 
   }

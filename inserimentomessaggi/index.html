@@ -115,7 +115,7 @@
         <!-- chat -->
         <div class="chat">
 
-          <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]">
+          <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]" @click="deleteMessage(i)">
             <p class="messaggio-testo">{{ message.messaggio }}</p>
             <p class="messaggio-data">{{ message.data }}</p>
             <i class="fas fa-angle-down"></i>

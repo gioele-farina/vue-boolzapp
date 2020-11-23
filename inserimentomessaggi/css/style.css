@@ -421,6 +421,12 @@ body {
   float: left;
 }
 
+.msgCookie {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 /*                                     message */
 .message {
   grid-area: message;
