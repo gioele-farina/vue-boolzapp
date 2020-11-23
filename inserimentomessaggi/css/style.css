@@ -137,8 +137,8 @@ body {
 }
 
 .user-info img {
-  height: 100%;
-  width: auto;
+  height: 53px;
+  width: 53px;
   border-radius: 50%;
 }
 
@@ -277,8 +277,8 @@ body {
 }
 
 .contatto img {
-  height: 100%;
-  width: auto;
+  height: 53px;
+  width: 53px;
   margin-right: 10px;
   border-radius: 50%;
   background-color: #F2F2F2;
@@ -342,8 +342,8 @@ body {
 }
 
 .chat-info img, nav img {
-  height: 100%;
-  width: auto;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
 }
 

@@ -27,9 +27,36 @@ var app =new Vue({
 
     contatti: [
       {
+        nome: "Luca",
+        cognome: "Giurato",
+        avatar: "img/avatar_1.jpg",
+        ultimoAcceso: "22/11/20 17:25",
+        chat:
+          [
+            {
+              messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
+              mittente: "ricevuto",
+              data: "19/11/20 16:48"
+            },
+            {
+              messaggio : "Grazie Luca!",
+              mittente: "inviato",
+              data: "19/11/20 16:49"
+            },
+            {
+              messaggio : "La fasta è rigorosamente fatta al luogo quella fresca.",
+              mittente: "ricevuto",
+              data: "19/11/20 16:48"
+            },
+          ],
+        attivo: false,
+        ultimoRicevuto: {}
+      },
+
+      {
         nome: "Capa",
         cognome: "Rezza",
-        avatar: "img/avatar_1.jpg",
+        avatar: "img/avatar_2.jpg",
         ultimoAcceso: "20/11/20 23.52",
         chat:
           [
@@ -64,36 +91,9 @@ var app =new Vue({
       },
 
       {
-        nome: "Luca",
-        cognome: "Giurato",
-        avatar: "img/avatar_2.jpg",
-        ultimoAcceso: "22/11/20 17:25",
-        chat:
-          [
-            {
-              messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
-              mittente: "ricevuto",
-              data: "19/11/20 16:48"
-            },
-            {
-              messaggio : "Grazie Luca!",
-              mittente: "inviato",
-              data: "19/11/20 16:49"
-            },
-            {
-              messaggio : "La fasta è rigorosamente fatta al luogo quella fresca.",
-              mittente: "ricevuto",
-              data: "19/11/20 16:48"
-            },
-          ],
-        attivo: false,
-        ultimoRicevuto: {}
-      },
-
-      {
         nome: "Bruno",
         cognome: " Liegi Bastonliegi",
-        avatar: "img/avatar_2.jpg",
+        avatar: "img/avatar_3.jpg",
         ultimoAcceso: "20/11/20 23.52",
         chat:
           [
