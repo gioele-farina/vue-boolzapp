@@ -25,7 +25,6 @@ var app =new Vue({
 
     contatti: [
       {
-        idUnivoco: "000000", //forse non mi serve
         nome: "Capa",
         cognome: "Rezza",
         avatar: "img/avatar_1.jpg",
@@ -58,11 +57,11 @@ var app =new Vue({
               data: "19/11/20 16:50"
             }
           ],
-        attivo: false
+        attivo: false,
+        ultimoRicevuto: {}
       },
 
       {
-        idUnivoco: "000000", //forse non mi serve
         nome: "Luca",
         cognome: "Giurato",
         avatar: "img/avatar_2.jpg",
@@ -85,11 +84,11 @@ var app =new Vue({
               data: "19/11/20 16:48"
             },
           ],
-        attivo: false
+        attivo: false,
+        ultimoRicevuto: {}
       },
 
       {
-        idUnivoco: "000000", //forse non mi serve
         nome: "Bruno",
         cognome: " Liegi Bastonliegi",
         avatar: "img/avatar_2.jpg",
@@ -97,7 +96,7 @@ var app =new Vue({
         chat:
           [
             {
-              messaggio : "Hanno catturato Maggio, Alberto! Dobbiamo fare qualcosa!",
+              messaggio : "Hanno catturato Maccio, Alberto! Dobbiamo fare qualcosa!",
               mittente: "ricevuto",
               data: "19/11/20 16:48"
             },
@@ -109,15 +108,16 @@ var app =new Vue({
             {
               messaggio : ";)",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:55"
             },
             {
               messaggio : ";)",
               mittente: "inviato",
-              data: "19/11/20 16:50"
+              data: "19/11/20 16:56"
             }
           ],
-        attivo: false
+        attivo: false,
+        ultimoRicevuto: {}
       }
 
     ]
@@ -143,7 +143,16 @@ var app =new Vue({
         } else { //se sono in mobile e apro una chat
           app.showChat();
         }
+      });
 
+      //Controllo quali sono gli ultimi messaggi ricevuti di ogni contatto
+      app.contatti.forEach((contatto, i) => {
+        let soloRicevuti = contatto.chat.filter((messaggio) => {
+          if (messaggio.mittente === "ricevuto") {
+            return messaggio;
+          }
+        });
+        contatto.ultimoRicevuto = soloRicevuti[soloRicevuti.length - 1];
       });
 
     })

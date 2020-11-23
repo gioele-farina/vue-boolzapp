@@ -369,6 +369,11 @@ body {
   margin: 5px 5%;
   border-radius: 10px;
   padding: 10px;
+  position: relative;
+}
+
+.messaggio:hover i {
+  visibility: visible;
 }
 
 .chat .messaggio:first-child {
@@ -384,6 +389,16 @@ body {
   font-size: 10px;
   color: #B6B9BB;
   text-align: right;
+}
+
+.messaggio i {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  color: #B6B9BB;
+  background-color: inherit;
+  filter: opacity(60%);
+  visibility: hidden;
 }
 
 .inviato {

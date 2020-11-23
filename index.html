@@ -75,7 +75,7 @@
             </div>
           </div>
 
-          <p class="anteprima-data">{{ contatto.ultimoAcceso }}</p>
+          <p class="anteprima-data">{{ contatto.chat[contatto.chat.length -1].data }}</p>
         </div>
 
       </div>
@@ -118,6 +118,7 @@
           <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]">
             <p class="messaggio-testo">{{ message.messaggio }}</p>
             <p class="messaggio-data">{{ message.data }}</p>
+            <i class="fas fa-angle-down"></i>
           </div>
 
         </div>
