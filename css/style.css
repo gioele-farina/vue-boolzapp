@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+i:hover {
+  cursor: pointer;
+}
+
 /* STATI DEL LAYOUT DEBUG */
 .main-start {
   /* display: none !important; */
@@ -25,7 +29,7 @@ nav {
 /*                    Macrostruttura */
 body {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 
@@ -153,6 +157,7 @@ body {
 .contacts {
   grid-area: contacts;
   background-color: #FFFFFF;
+  overflow: auto;
 }
 
 /* contacts Alert */
@@ -228,6 +233,11 @@ body {
   justify-content: space-between;
 }
 
+.contatto:hover {
+  background-color: #f0f0f5;
+  cursor: pointer;
+}
+
 .anteprima {
   min-width: 0;
   flex-grow: 1;
@@ -276,6 +286,10 @@ body {
 .contact-active {
   background-color: #E9EBEB;
   border-bottom: 0;
+}
+
+.contact-active:hover {
+  background-color: #E9EBEB;
 }
 
 .contact-active img{
