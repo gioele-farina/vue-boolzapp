@@ -60,13 +60,13 @@
         <div class="contacts-search">
           <div>
             <i class="fas fa-search"></i>
-            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="cerca" @input="cercaFunction()">
           </div>
         </div>
 
         <!-- struttura contatto -->
         <!-- <div :class="['contatto' ,{contact-active: contatto.active === true}]" @click="showChat" v-for="(contatto, i) in contatti"> -->
-        <div v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]" @click="showChat(); selectChat(i)">
+        <div v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]" v-if="contatto.visibile" @click="showChat(); selectChat(i)">
           <div class="anteprima">
             <img :src="contatto.avatar">
             <div class="info-utente">

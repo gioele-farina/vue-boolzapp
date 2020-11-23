@@ -16,6 +16,7 @@ var app =new Vue({
     utenteAttivo: "",
 
     messaggioInserito: "",
+    cerca: "",
 
     // DATI
     meInfo: {
@@ -50,7 +51,8 @@ var app =new Vue({
             },
           ],
         attivo: false,
-        ultimoRicevuto: {}
+        ultimoRicevuto: {},
+        visibile: true
       },
 
       {
@@ -87,12 +89,13 @@ var app =new Vue({
             }
           ],
         attivo: false,
-        ultimoRicevuto: {}
+        ultimoRicevuto: {},
+        visibile: true
       },
 
       {
         nome: "Bruno",
-        cognome: " Liegi Bastonliegi",
+        cognome: "Liegi Bastonliegi",
         avatar: "img/avatar_3.jpg",
         ultimoAcceso: "20/11/20 23.52",
         chat:
@@ -119,7 +122,8 @@ var app =new Vue({
             }
           ],
         attivo: false,
-        ultimoRicevuto: {}
+        ultimoRicevuto: {},
+        visibile: true
       }
 
     ]
@@ -305,7 +309,7 @@ var app =new Vue({
             testo = "C'è qualquadra che non cosa";
             break;
           case 10:
-            // code block
+            testo = "Un saloroso caluto a tutti!";
             break;
         }
       } else {
@@ -327,6 +331,24 @@ var app =new Vue({
         // Cambio data accesso utente attivo
         utenteAttivoRisposta.ultimoAcceso = app.ottieniData();
       }, attesa*1000);
+    },
+
+    cercaFunction: function(){
+      // per ogni contatti cerca nel nome e nel cognome se è contenuta la substringa
+      app.contatti.forEach((contatto, i) => {
+        let stringa = app.cerca;
+        let nome = `${contatto.nome} ${contatto.cognome}`
+        // rendo tutto lowercase per il controllo
+        stringa = stringa.toLowerCase();
+        nome = nome.toLowerCase();
+
+        if (nome.includes(stringa)) {
+          contatto.visibile = true;
+        } else {
+          contatto.visibile = false;
+        }
+      });
+
     }
 
   }
