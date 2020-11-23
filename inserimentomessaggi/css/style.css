@@ -363,18 +363,21 @@ body {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
   overflow: auto;
-  display: flex;
-  flex-direction: column;
+}
+
+.chat .messaggio:last-child {
+  margin-bottom: 10px;
 }
 
 .messaggio {
   min-width: 200px;
   max-width: 260px;
   word-wrap: break-word;
-  margin: 5px 5%;
+  margin: 3px 5%;
   border-radius: 10px;
   padding: 10px;
   position: relative;
+  clear: both;
 }
 
 .messaggio:hover i {
@@ -409,11 +412,13 @@ body {
 .inviato {
   align-self: flex-end;
   background-color: #D5F9BA;
+  float: right;
 }
 
 .ricevuto {
   align-self: flex-start;
   background-color: #FFFFFF;
+  float: left;
 }
 
 /*                                     message */
