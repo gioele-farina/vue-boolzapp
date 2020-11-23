@@ -9,6 +9,10 @@ i:hover {
   cursor: pointer;
 }
 
+h2 {
+  font-weight: 200;
+}
+
 /* STATI DEL LAYOUT DEBUG */
 .main-start {
   /* display: none !important; */
@@ -184,6 +188,7 @@ body {
 
 .contacts-alert > div h2 {
   font-size: 18px;
+  font-weight: bold;
 }
 
 .contacts-alert > div p {

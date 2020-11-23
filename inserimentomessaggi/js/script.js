@@ -253,7 +253,7 @@ var app =new Vue({
       let dataEstesa = `${dd}/${mm}/${yyyy} ${hh}:${minutes}`;
       return dataEstesa;
     },
-    
+
     scrivi: function(){
       // inserisco il nuovo messaggio
       let messaggio =
@@ -265,6 +265,29 @@ var app =new Vue({
       app.$set(app.utenteAttivo.chat, app.utenteAttivo.chat.length, messaggio);
       // pulisco il prompt
       app.messaggioInserito = "";
+
+      // avvio risposta automatica
+      app.riceviRisposta();
+    },
+
+    riceviRisposta: function(){
+      let utenteAttivoRisposta = app.utenteAttivo;
+      let attesa = Math.floor(Math.random() * 6) + 1;
+      utenteAttivoRisposta.ultimoAcceso = `${utenteAttivoRisposta.nome} sta scrivendo...`
+      setTimeout(function(){
+        // Genero e inserisco il messaggio
+        let testo = "ok"
+        let messaggio =
+        {
+          messaggio: testo,
+          mittente: "ricevuto",
+          data: app.ottieniData()
+        };
+        app.$set(utenteAttivoRisposta.chat, utenteAttivoRisposta.chat.length, messaggio);
+
+        // Cambio data accesso utente attivo
+        utenteAttivoRisposta.ultimoAcceso = app.ottieniData();
+      }, attesa*1000);
     }
 
   }
