@@ -18,7 +18,7 @@ var app =new Vue({
     // DATI
     meInfo: {
       avatar: "img/avatar_io.jpg",
-      ultimoAcceso: "Ora", //poi prendo il dato da funzione data
+      ultimoAcceso: "Ora",
       nome: "Alberto",
       cognome: "Gian Giangela"
     },
@@ -146,6 +146,7 @@ var app =new Vue({
       });
 
       //Controllo quali sono gli ultimi messaggi ricevuti di ogni contatto
+      // per calcolarmi l'ultimo accesso
       app.contatti.forEach((contatto, i) => {
         let soloRicevuti = contatto.chat.filter((messaggio) => {
           if (messaggio.mittente === "ricevuto") {
@@ -154,6 +155,12 @@ var app =new Vue({
         });
         contatto.ultimoRicevuto = soloRicevuti[soloRicevuti.length - 1];
       });
+
+      // per ogni contatto assegno a ultimoAcceso il valore di ultimoRicevuto.data
+      app.contatti.forEach((contatto, i) => {
+        contatto.ultimoAcceso = contatto.ultimoRicevuto.data;
+      });
+
 
     })
   },
