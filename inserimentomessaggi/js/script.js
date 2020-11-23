@@ -272,11 +272,50 @@ var app =new Vue({
 
     riceviRisposta: function(){
       let utenteAttivoRisposta = app.utenteAttivo;
+      let testo;
+      // Luca Giurato risposta
+      if (utenteAttivoRisposta.cognome === "Giurato") {
+        let ripostaRandom = Math.floor(Math.random() * 10) + 1;
+        switch(ripostaRandom) {
+          case 1:
+            testo = "A pra foco!";
+            break;
+          case 2:
+            testo = "A parole siamo tutti bravi";
+            break;
+          case 3:
+            testo = "Buona fine di inizio settimana";
+              break;
+          case 4:
+            testo = "Date una demaglia a quest'uomo";
+            break;
+          case 5:
+            testo = "Ciancio alle bande";
+            break;
+          case 6:
+            testo = "Buongiollo";
+            break;
+          case 7:
+            testo = "Ghiazze della caiezza";
+              break;
+          case 8:
+            testo = "Benvenuti a tutte le amiche telespettatrici e agli amici telespettatroci";
+            break;
+          case 9:
+            testo = "C'è qualquadra che non cosa";
+            break;
+          case 10:
+            // code block
+            break;
+        }
+      } else {
+        testo = "ok";
+      }
+
       let attesa = Math.floor(Math.random() * 6) + 1;
       utenteAttivoRisposta.ultimoAcceso = `${utenteAttivoRisposta.nome} sta scrivendo...`
       setTimeout(function(){
         // Genero e inserisco il messaggio
-        let testo = "ok"
         let messaggio =
         {
           messaggio: testo,
