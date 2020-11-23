@@ -427,6 +427,23 @@ body {
   margin: 0;
 }
 
+.messageMenu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+  box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+}
+
+.messageMenu > *:hover {
+  background-color: #E9EBEB;
+  cursor: pointer;
+}
+
 /*                                     message */
 .message {
   grid-area: message;

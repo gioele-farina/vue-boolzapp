@@ -37,22 +37,26 @@ var app =new Vue({
             {
               messaggio : "",
               mittente: "msgCookie",
-              data: ""
+              data: "",
+              showMenu: false
             },
             {
               messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:48",
+              showMenu: false
             },
             {
               messaggio : "Grazie Luca!",
               mittente: "inviato",
-              data: "19/11/20 16:49"
+              data: "19/11/20 16:49",
+              showMenu: false
             },
             {
               messaggio : "La fasta è rigorosamente fatta al luogo quella fresca.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:48",
+              showMenu: false
             },
           ],
         attivo: false,
@@ -70,32 +74,38 @@ var app =new Vue({
             {
               messaggio : "",
               mittente: "msgCookie",
-              data: ""
+              data: "",
+              showMenu: false
             },
             {
               messaggio : "Ciao ho sentito il tuo disco. E' assolutamente ridicolo. Non mi scrivere mai più.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:48",
+              showMenu: false
             },
             {
               messaggio : "Secondo me sei solo invidioso.",
               mittente: "inviato",
-              data: "19/11/20 16:49"
+              data: "19/11/20 16:49",
+              showMenu: false
             },
             {
               messaggio : "Puzzi",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:48",
+              showMenu: false
             },
             {
               messaggio : "Hai ragione",
               mittente: "inviato",
-              data: "19/11/20 16:50"
+              data: "19/11/20 16:50",
+              showMenu: false
             },
             {
               messaggio : ":(",
               mittente: "inviato",
-              data: "19/11/20 16:50"
+              data: "19/11/20 16:50",
+              showMenu: false
             }
           ],
         attivo: false,
@@ -113,27 +123,32 @@ var app =new Vue({
             {
               messaggio : "",
               mittente: "msgCookie",
-              data: ""
+              data: "",
+              showMenu: false
             },
             {
               messaggio : "Hanno catturato Maccio, Alberto! Dobbiamo fare qualcosa!",
               mittente: "ricevuto",
-              data: "19/11/20 16:48"
+              data: "19/11/20 16:48",
+              showMenu: false
             },
             {
               messaggio : "Ricevuto, chiamo la squadra",
               mittente: "inviato",
-              data: "19/11/20 16:49"
+              data: "19/11/20 16:49",
+              showMenu: false
             },
             {
               messaggio : ";)",
               mittente: "ricevuto",
-              data: "19/11/20 16:55"
+              data: "19/11/20 16:55",
+              showMenu: false
             },
             {
               messaggio : ";)",
               mittente: "inviato",
-              data: "19/11/20 16:56"
+              data: "19/11/20 16:56",
+              showMenu: false
             }
           ],
         attivo: false,
@@ -280,7 +295,8 @@ var app =new Vue({
         {
           messaggio: app.messaggioInserito,
           mittente: "inviato",
-          data: app.ottieniData()
+          data: app.ottieniData(),
+          showMenu: false
         };
         app.$set(app.utenteAttivo.chat, app.utenteAttivo.chat.length, messaggio);
         // pulisco il prompt
@@ -341,7 +357,8 @@ var app =new Vue({
         {
           messaggio: testo,
           mittente: "ricevuto",
-          data: app.ottieniData()
+          data: app.ottieniData(),
+          showMenu: false
         };
         app.$set(utenteAttivoRisposta.chat, utenteAttivoRisposta.chat.length, messaggio);
 
@@ -369,6 +386,19 @@ var app =new Vue({
 
     deleteMessage: function(index){
       app.$delete(app.utenteAttivo.chat, index);
+    },
+
+    showMenu: function(index){
+      app.utenteAttivo.chat[index].showMenu = true;
+    },
+
+    closeMenu: function(){
+      app.contatti.forEach((contatto, i) => {
+        contatto.chat.forEach((message, i) => {
+          message.showMenu = false;
+        });
+      });
+
     }
 
   }
