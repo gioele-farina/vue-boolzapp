@@ -23,7 +23,6 @@
     <div class="background2"></div>
 
     <!-- app vue -->
-    <!-- layout-desktop layout-contatti-mobile layout-chat-mobile-->
     <div id="app" :class="layoutApp">
 
       <!-- User info -->
@@ -65,7 +64,6 @@
         </div>
 
         <!-- struttura contatto -->
-        <!-- <div :class="['contatto' ,{contact-active: contatto.active === true}]" @click="showChat" v-for="(contatto, i) in contatti"> -->
         <div v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]" v-if="contatto.visibile" @click="showChat(); selectChat(i)">
           <div class="anteprima">
             <img :src="contatto.avatar">
