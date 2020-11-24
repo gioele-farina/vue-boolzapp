@@ -60,13 +60,13 @@
         <div class="contacts-search">
           <div>
             <i class="fas fa-search"></i>
-            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="cerca" @input="cercaFunction()">
           </div>
         </div>
 
         <!-- struttura contatto -->
         <!-- <div :class="['contatto' ,{contact-active: contatto.active === true}]" @click="showChat" v-for="(contatto, i) in contatti"> -->
-        <div v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]" @click="showChat(); selectChat(i)">
+        <div v-for="(contatto, i) in contatti" :class="['contatto' ,{'contact-active': contatto.attivo === true}]" v-if="contatto.visibile" @click="showChat(); selectChat(i)">
           <div class="anteprima">
             <img :src="contatto.avatar">
             <div class="info-utente">
@@ -115,10 +115,14 @@
         <!-- chat -->
         <div class="chat">
 
-          <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]">
+          <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]" @mouseleave="closeMenu">
             <p class="messaggio-testo">{{ message.messaggio }}</p>
             <p class="messaggio-data">{{ message.data }}</p>
-            <i class="fas fa-angle-down"></i>
+            <i class="fas fa-angle-down" @click="showMenu(i)"></i>
+            <div class="messageMenu" v-if="message.showMenu">
+              <p>Info</p>
+              <p @click="deleteMessage(i)">Cancella messaggio</p>
+            </div>
           </div>
 
         </div>
@@ -128,8 +132,8 @@
           <i class="far fa-smile"></i>
           <!-- <p contenteditable>ciaociaociao</p> -->
           <!-- ridimensionare l'input da js in base alla lunghezza del testo -->
-          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-          <i class="fas fa-microphone"></i>
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.13="scrivi" v-model="messaggioInserito">
+          <i class="fas fa-microphone" @click="scrivi()"></i>
         </div>
 
         <!-- responsive -->

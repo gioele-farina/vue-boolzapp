@@ -9,6 +9,10 @@ i:hover {
   cursor: pointer;
 }
 
+h2 {
+  font-weight: 200;
+}
+
 /* STATI DEL LAYOUT DEBUG */
 .main-start {
   /* display: none !important; */
@@ -133,8 +137,8 @@ body {
 }
 
 .user-info img {
-  height: 100%;
-  width: auto;
+  height: 53px;
+  width: 53px;
   border-radius: 50%;
 }
 
@@ -184,6 +188,7 @@ body {
 
 .contacts-alert > div h2 {
   font-size: 18px;
+  font-weight: bold;
 }
 
 .contacts-alert > div p {
@@ -272,8 +277,8 @@ body {
 }
 
 .contatto img {
-  height: 100%;
-  width: auto;
+  height: 53px;
+  width: 53px;
   margin-right: 10px;
   border-radius: 50%;
   background-color: #F2F2F2;
@@ -337,8 +342,8 @@ body {
 }
 
 .chat-info img, nav img {
-  height: 100%;
-  width: auto;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
 }
 
@@ -358,18 +363,21 @@ body {
   grid-area: chat;
   background-image: url("../img/mine.jpg");
   overflow: auto;
-  display: flex;
-  flex-direction: column;
+}
+
+.chat .messaggio:last-child {
+  margin-bottom: 10px;
 }
 
 .messaggio {
   min-width: 200px;
   max-width: 260px;
   word-wrap: break-word;
-  margin: 5px 5%;
+  margin: 3px 5%;
   border-radius: 10px;
   padding: 10px;
   position: relative;
+  clear: both;
 }
 
 .messaggio:hover i {
@@ -404,11 +412,36 @@ body {
 .inviato {
   align-self: flex-end;
   background-color: #D5F9BA;
+  float: right;
 }
 
 .ricevuto {
   align-self: flex-start;
   background-color: #FFFFFF;
+  float: left;
+}
+
+.msgCookie {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.messageMenu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+  box-shadow: 0px 0px 5px 0px rgba(191,191,191,1);
+}
+
+.messageMenu > *:hover {
+  background-color: #E9EBEB;
+  cursor: pointer;
 }
 
 /*                                     message */
