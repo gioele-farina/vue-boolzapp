@@ -266,6 +266,9 @@ var app =new Vue({
       });
       // setto su true attivo per il contatto corrente
       app.utenteAttivo.attivo = true;
+
+      // avvio la chat direttamente dal fondo
+      app.scrollInBasso();
     },
 
     mobileBackToContacts: function(){
@@ -314,10 +317,7 @@ var app =new Vue({
         app.riceviRisposta();
 
         // tengo sempre scrollato in basso
-        setTimeout(function(){
-          let chat = document.getElementById("chat");
-          chat.scrollTop = chat.scrollHeight;
-        }, 1);
+        app.scrollInBasso();
       }
     },
 
@@ -380,10 +380,7 @@ var app =new Vue({
         utenteAttivoRisposta.ultimoAcceso = app.ottieniData();
 
         // tengo sempre scrollato in basso
-        setTimeout(function(){
-          let chat = document.getElementById("chat");
-          chat.scrollTop = chat.scrollHeight;
-        }, 1);
+        app.scrollInBasso();
       }, attesa*1000);
     },
 
@@ -418,7 +415,13 @@ var app =new Vue({
           message.showMenu = false;
         });
       });
+    },
 
+    scrollInBasso: function() {
+      setTimeout(function(){
+        let chat = document.getElementById("chat");
+        chat.scrollTop = chat.scrollHeight;
+      }, 1);
     }
 
   }
