@@ -277,13 +277,21 @@ var app =new Vue({
     },
 
     ottieniData: function() {
+
+      function addZero(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+
       let today = new Date();
-      let dd = today.getDate();
-      let mm = today.getMonth(); mm++;
-      let yyyy = today.getFullYear();
-      let hh = today.getHours();
-      let minutes = today.getMinutes();
-      let seconds = today.getSeconds();
+      let dd = addZero(today.getDate());
+      let mm = today.getMonth(); mm++; mm = addZero(today.getMonth());
+      let yyyy = addZero(today.getFullYear());
+      let hh = addZero(today.getHours());
+      let minutes = addZero(today.getMinutes());
+      let seconds = addZero(today.getSeconds());
       let dataEstesa = `${dd}/${mm}/${yyyy} ${hh}:${minutes}`;
       return dataEstesa;
     },
