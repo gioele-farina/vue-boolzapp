@@ -111,7 +111,7 @@
         </div>
 
         <!-- chat -->
-        <div class="chat">
+        <div id="chat" class="chat">
 
           <div v-for="(message, i) in utenteAttivo.chat" :class="['messaggio' , message.mittente]" @mouseleave="closeMenu">
             <p class="messaggio-testo">{{ message.messaggio }}</p>

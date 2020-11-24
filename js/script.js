@@ -31,7 +31,7 @@ var app =new Vue({
         nome: "Luca",
         cognome: "Giurato",
         avatar: "img/avatar_1.jpg",
-        ultimoAcceso: "22/11/20 17:25",
+        ultimoAcceso: "22/11/2020 17:25",
         chat:
           [
             {
@@ -43,19 +43,19 @@ var app =new Vue({
             {
               messaggio : "Ho voluto citare Padeo Scoppia. L'arte non è acqua. Secondo me CapaPezza sbaglia.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48",
+              data: "19/11/2020 16:48",
               showMenu: false
             },
             {
               messaggio : "Grazie Luca!",
               mittente: "inviato",
-              data: "19/11/20 16:49",
+              data: "19/11/2020 16:49",
               showMenu: false
             },
             {
               messaggio : "La fasta è rigorosamente fatta al luogo quella fresca.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48",
+              data: "19/11/2020 16:48",
               showMenu: false
             },
           ],
@@ -68,7 +68,7 @@ var app =new Vue({
         nome: "Capa",
         cognome: "Rezza",
         avatar: "img/avatar_2.jpg",
-        ultimoAcceso: "20/11/20 23.52",
+        ultimoAcceso: "20/11/2020 23.52",
         chat:
           [
             {
@@ -80,31 +80,31 @@ var app =new Vue({
             {
               messaggio : "Ciao ho sentito il tuo disco. E' assolutamente ridicolo. Non mi scrivere mai più.",
               mittente: "ricevuto",
-              data: "19/11/20 16:48",
+              data: "19/11/2020 16:48",
               showMenu: false
             },
             {
               messaggio : "Secondo me sei solo invidioso.",
               mittente: "inviato",
-              data: "19/11/20 16:49",
+              data: "19/11/2020 16:49",
               showMenu: false
             },
             {
               messaggio : "Puzzi",
               mittente: "ricevuto",
-              data: "19/11/20 16:48",
+              data: "19/11/2020 16:48",
               showMenu: false
             },
             {
               messaggio : "Hai ragione",
               mittente: "inviato",
-              data: "19/11/20 16:50",
+              data: "19/11/2020 16:50",
               showMenu: false
             },
             {
               messaggio : ":(",
               mittente: "inviato",
-              data: "19/11/20 16:50",
+              data: "19/11/2020 16:50",
               showMenu: false
             }
           ],
@@ -117,7 +117,7 @@ var app =new Vue({
         nome: "Bruno",
         cognome: "Liegi Bastonliegi",
         avatar: "img/avatar_3.jpg",
-        ultimoAcceso: "20/11/20 23.52",
+        ultimoAcceso: "20/11/2020 23.52",
         chat:
           [
             {
@@ -129,25 +129,25 @@ var app =new Vue({
             {
               messaggio : "Hanno catturato Maccio, Alberto! Dobbiamo fare qualcosa!",
               mittente: "ricevuto",
-              data: "19/11/20 16:48",
+              data: "19/11/2020 16:48",
               showMenu: false
             },
             {
               messaggio : "Ricevuto, chiamo la squadra",
               mittente: "inviato",
-              data: "19/11/20 16:49",
+              data: "19/11/2020 16:49",
               showMenu: false
             },
             {
               messaggio : ";)",
               mittente: "ricevuto",
-              data: "19/11/20 16:55",
+              data: "19/11/2020 16:55",
               showMenu: false
             },
             {
               messaggio : ";)",
               mittente: "inviato",
-              data: "19/11/20 16:56",
+              data: "19/11/2020 16:56",
               showMenu: false
             }
           ],
@@ -287,7 +287,7 @@ var app =new Vue({
 
       let today = new Date();
       let dd = addZero(today.getDate());
-      let mm = today.getMonth(); mm++; mm = addZero(today.getMonth());
+      let mm = today.getMonth(); mm++ ; mm = addZero(mm);
       let yyyy = addZero(today.getFullYear());
       let hh = addZero(today.getHours());
       let minutes = addZero(today.getMinutes());
@@ -312,6 +312,12 @@ var app =new Vue({
 
         // avvio risposta automatica
         app.riceviRisposta();
+
+        // tengo sempre scrollato in basso
+        setTimeout(function(){
+          let chat = document.getElementById("chat");
+          chat.scrollTop = chat.scrollHeight;
+        }, 1);
       }
     },
 
@@ -372,6 +378,12 @@ var app =new Vue({
 
         // Cambio data accesso utente attivo
         utenteAttivoRisposta.ultimoAcceso = app.ottieniData();
+
+        // tengo sempre scrollato in basso
+        setTimeout(function(){
+          let chat = document.getElementById("chat");
+          chat.scrollTop = chat.scrollHeight;
+        }, 1);
       }, attesa*1000);
     },
 
