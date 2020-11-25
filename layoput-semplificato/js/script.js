@@ -2,7 +2,8 @@ var app =new Vue({
   el:'#app',
   data: {
     // FLAGS LAYOUT
-    schermataMaim: "chat",
+    device: "", //desktop o mobile
+    schermataMaim: "", //start o chat
 
     // flags
     statoMain: "",
@@ -181,59 +182,9 @@ var app =new Vue({
   },
 
   methods: {
-    // STATI DEL LAYOUT
-    layoutMobileContacts: function(){
-      app.layoutApp = "layout-contatti-mobile";
-      app.schermataMaim = false;
-      app.contactsAlert = false;
-      app.nav = false;
-
-      app.userInfo = true;
-      app.contacts = true;
-      app.chatInfo = false;
-
-    },
-
-    layoutChatMobile: function(){
-      app.layoutApp = "layout-chat-mobile";
-      app.nav = true;
-      app.schermataMaim = "chat";
-      app.contactsAlert = false;
-      app.userInfo = false;
-      app.contacts = false;
-      app.chatInfo = false;
-    },
-
-    layoutDesktop: function(){
-      app.layoutApp = "layout-desktop";
-      app.schermataMaim = app.statoMain;
-      app.contactsAlert = true;
-      app.nav = false;
-      app.userInfo = true;
-      app.contacts = true;
-      app.chatInfo = true;
-    },
-
-    // AZIONI SUL LAYOUT
-    mobileContacts: function () {
-      // Mostra versione mobile se necessario o ritorna a come prima
-      if (document.documentElement.clientWidth <= 700 ) {
-        app.layoutMobileContacts();
-      } else {
-        app.layoutDesktop();
-      }
-    },
-
     // gestisce il layout della chat
     showChat: function (){
       app.statoMain = "chat";
-      // se clicco sui contatti
-      if (document.documentElement.clientWidth <= 700 ) {
-        app.layoutChatMobile();
-      } else {
-        app.layoutDesktop();
-      }
-
     },
 
     // seleziona la chat corrente
