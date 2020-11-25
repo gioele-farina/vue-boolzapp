@@ -17,7 +17,7 @@ body {
   background-color: black;
 }
 
-/* STATI DEL LAYOUT /* DEBUG:  */
+/* STATI DEL LAYOUT*/
 .mobile-version {
   display: none;
 }
@@ -461,5 +461,35 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
+
+  .desktop-version {
+    display: none;
+  }
+
+  .mobile-version {
+    display: grid;
+  }
+
+  /* Macrostruttura */
+  .contatti-mobile {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 59px 1fr;
+    grid-template-areas:
+    "user-info"
+    "contacts";
+  }
+
+  .chat-mobile {
+    /* regole grid */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 59px 1fr minmax(62px, auto);
+    grid-template-areas:
+    "nav"
+    "chat"
+    "message";
+  }
+  /* fine Macrostruttura */
 
 }

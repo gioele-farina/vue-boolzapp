@@ -4,9 +4,9 @@ var app =new Vue({
     // FLAGS LAYOUT
     device: "", //desktop o mobile
     schermataMaim: "", //start o chat
+    mobileView: "contatti-mobile", //contatti-mobile o chat-mobile
 
     // flags
-    statoMain: "",
     utenteAttivo: "",
 
     messaggioInserito: "",
@@ -159,7 +159,6 @@ var app =new Vue({
 
       // GESTIONE STATI INIZIALI
       this.schermataMaim = "start";
-      app.statoMain = "start";
 
       //Controllo quali sono gli ultimi messaggi ricevuti di ogni contatto
       // per calcolarmi l'ultimo accesso
@@ -184,7 +183,7 @@ var app =new Vue({
   methods: {
     // gestisce il layout della chat
     showChat: function (){
-      app.statoMain = "chat";
+      app.schermataMaim = "chat";
     },
 
     // seleziona la chat corrente
