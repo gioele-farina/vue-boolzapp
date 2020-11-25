@@ -2,9 +2,8 @@ var app =new Vue({
   el:'#app',
   data: {
     // FLAGS LAYOUT
-    device: "", //desktop o mobile
     schermataMaim: "", //start o chat
-    mobileView: "contatti-mobile", //contatti-mobile o chat-mobile
+    mobileView: "", //contatti-mobile o chat-mobile
 
     // flags
     utenteAttivo: "",
@@ -159,6 +158,7 @@ var app =new Vue({
 
       // GESTIONE STATI INIZIALI
       this.schermataMaim = "start";
+      this.mobileView = "contatti-mobile";
 
       //Controllo quali sono gli ultimi messaggi ricevuti di ogni contatto
       // per calcolarmi l'ultimo accesso
@@ -186,6 +186,10 @@ var app =new Vue({
       app.schermataMaim = "chat";
     },
 
+    showChatMobile: function (){
+      app.mobileView = "chat-mobile";
+    },
+
     // seleziona la chat corrente
     selectChat: function(indiceContatto){
       app.utenteAttivo = app.contatti[indiceContatto];
@@ -201,7 +205,7 @@ var app =new Vue({
     },
 
     mobileBackToContacts: function(){
-      app.layoutMobileContacts();
+      app.mobileView = "contatti-mobile";
       // setto su false attivo per tutti i contatti
       app.contatti.forEach((contatto, i) => {
         contatto.attivo = false;
@@ -354,6 +358,4 @@ var app =new Vue({
     }
 
   }
-
-
 });
