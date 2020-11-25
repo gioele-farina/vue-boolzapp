@@ -188,6 +188,8 @@ var app =new Vue({
 
     showChatMobile: function (){
       app.mobileView = "chat-mobile";
+      // tengo sempre scrollato in basso
+      app.scrollInBasso();
     },
 
     // seleziona la chat corrente

@@ -14,7 +14,12 @@ h2 {
 }
 
 body {
-  background-color: black;
+  background-image: url(../img/background.png);
+  background-position: top;
+  background-repeat: repeat-x;
+  background-size: contain;
+
+  background-color: #DCDBD1;
 }
 
 /* STATI DEL LAYOUT*/
