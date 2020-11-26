@@ -5,6 +5,8 @@ var app =new Vue({
     schermataMaim: "", //start o chat
     mobileView: "", //contatti-mobile o chat-mobile
     smiles: false,
+    fullScreenAvatar: false,
+    imgShowed: "",
 
     // flags
     utenteAttivo: "",
@@ -394,7 +396,22 @@ var app =new Vue({
 
     showSmiles: function(){
       this.smiles = !(this.smiles);
+    },
+
+    mostraAvatar: function () {
+      this.fullScreenAvatar = true;
+      this.imgShowed = this.utenteAttivo.avatar;
+    },
+
+    mostraMyAvatar:  function () {
+      this.fullScreenAvatar = true;
+      this.imgShowed = this.meInfo.avatar;
+    },
+
+    closeDisplayAvatar:  function () {
+      this.fullScreenAvatar = false;
+      this.imgShowed = "";
     }
-    
+
   }
 });

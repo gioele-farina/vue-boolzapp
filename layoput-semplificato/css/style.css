@@ -126,6 +126,10 @@ body {
   border-radius: 50%;
 }
 
+.user-info img:hover {
+  cursor: pointer;
+}
+
 .impostazioni-utente {
   width: 90px;
   display: flex;
@@ -298,6 +302,14 @@ body {
   justify-content: space-between;
 }
 
+.chat-info img:hover {
+  cursor: pointer;
+}
+
+.chat-utente img:hover {
+  cursor: pointer;
+}
+
 .chat-utente {
   height: 100%;
   width: calc(100% - 100px);
@@ -464,6 +476,35 @@ body {
   background-color: #F3EEEA;
   display: flex;
   align-items: center;
+}
+
+/*                     FULL SCREEN AVATAR */
+.fullScreenAvatar {
+  position: absolute;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+
+  /* background-color: #E9EBEB; */
+  background-color: rgba(204, 204, 204, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullScreenAvatar img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.fullScreenAvatar .fa-times {
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /*                             mediaqueries */

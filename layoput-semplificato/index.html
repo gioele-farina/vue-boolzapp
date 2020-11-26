@@ -31,6 +31,7 @@
     - contatti nascosti con possibilità di iniziare una chat
     - possibilità di aprire il menu emoji (non inseribili)
     - scroll automatico della chat in basso
+    - display avatar full screen
    -->
 
     <!-- app vue -->
@@ -42,7 +43,7 @@
         <!-- User info -->
         <div class="user-info">
 
-          <div class="nome-utente">
+          <div class="nome-utente" @click="mostraMyAvatar">
             <img :src="meInfo.avatar">
             <span>{{ meInfo.nome }} {{ meInfo.cognome }}</span>
           </div>
@@ -124,7 +125,7 @@
 
             <!-- variabile in base all'utente selezionato -->
             <div class="chat-utente">
-              <img :src="utenteAttivo.avatar">
+              <img :src="utenteAttivo.avatar" @click="mostraAvatar">
               <div>
                 <h2>{{ utenteAttivo.nome }} {{ utenteAttivo.cognome }}</h2>
                 <p>{{ utenteAttivo.ultimoAcceso }}</p>
@@ -176,6 +177,8 @@
             </div>
           </div>
 
+        </main>
+
       </div>
 
       <!-- VERSIONE MOBILE -->
@@ -188,7 +191,7 @@
           <div class="user-info">
 
             <div class="nome-utente">
-              <img :src="meInfo.avatar">
+              <img :src="meInfo.avatar" @click="mostraMyAvatar">
               <span>{{ meInfo.nome }} {{ meInfo.cognome }}</span>
             </div>
 
@@ -254,7 +257,7 @@
                 <i class="fas fa-arrow-left"></i>
               </div>
               <!-- parte variabile -->
-              <img :src="utenteAttivo.avatar">
+              <img :src="utenteAttivo.avatar" @click="mostraAvatar">
               <div class="info-utente">
                 <h2>{{ utenteAttivo.nome }} {{ utenteAttivo.cognome }}</h2>
                 <p>{{ utenteAttivo.ultimoAcceso }}</p>
@@ -306,7 +309,11 @@
 
       </div>
 
+    </div>
 
+    <div class="fullScreenAvatar" v-if="fullScreenAvatar">
+      <i class="fas fa-times" @click="closeDisplayAvatar"></i>
+      <img :src="imgShowed">
     </div>
 
   <script type="text/javascript" src="js/script.js"></script>
