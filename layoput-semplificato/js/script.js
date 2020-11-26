@@ -4,7 +4,7 @@ var app =new Vue({
     // FLAGS LAYOUT
     schermataMaim: "", //start o chat
     mobileView: "", //contatti-mobile o chat-mobile
-    smiles: true,
+    smiles: false,
 
     // flags
     utenteAttivo: "",
@@ -192,7 +192,7 @@ var app =new Vue({
             return messaggio;
           }
         });
-        if (soloRicevuti > 0) {
+        if (soloRicevuti.length > 0) {
           contatto.ultimoRicevuto = soloRicevuti[soloRicevuti.length - 1];
         } else {
           contatto.ultimoRicevuto = ""; //per le chat vuote
@@ -390,6 +390,10 @@ var app =new Vue({
         let chat = document.getElementById("chat");
         chat.scrollTop = chat.scrollHeight;
       }, 1);
+    },
+
+    showSmiles: function(){
+      this.smiles = !(this.smiles); 
     }
 
   }

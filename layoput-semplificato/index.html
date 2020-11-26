@@ -152,11 +152,11 @@
               <i class="fas fa-poo"></i>
               <i class="far fa-grin-squint-tears"></i>
               <i class="far fa-grin-hearts"></i>
-              <i class="far fa-grin-beam-sweat"></i>  
+              <i class="far fa-grin-beam-sweat"></i>
             </div>
 
             <div class="input-area">
-              <i class="far fa-smile"></i>
+              <i class="far fa-smile" @click="showSmiles()"></i>
               <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.13="scrivi" v-model="messaggioInserito">
               <i class="fas fa-microphone" @click="scrivi()"></i>
             </div>
