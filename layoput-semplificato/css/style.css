@@ -429,12 +429,14 @@ body {
 }
 
 /*                                     message */
-.message .input-area{
+.message{
   grid-area: message;
   background-color: #F3EEEA;
   padding: 10px 0;
   position: relative;
+}
 
+.input-area {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -462,11 +464,6 @@ body {
   background-color: #F3EEEA;
   display: flex;
   align-items: center;
-}
-
-.smiles i {
-  margin: 0;
-  padding: 0;
 }
 
 /*                             mediaqueries */
