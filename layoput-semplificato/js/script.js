@@ -4,6 +4,7 @@ var app =new Vue({
     // FLAGS LAYOUT
     schermataMaim: "", //start o chat
     mobileView: "", //contatti-mobile o chat-mobile
+    smiles: true,
 
     // flags
     utenteAttivo: "",

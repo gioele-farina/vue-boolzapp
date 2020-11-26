@@ -429,10 +429,11 @@ body {
 }
 
 /*                                     message */
-.message {
+.message .input-area{
   grid-area: message;
   background-color: #F3EEEA;
   padding: 10px 0;
+  position: relative;
 
   display: flex;
   justify-content: space-between;
@@ -453,6 +454,19 @@ body {
   padding: 10px;
   border: 0px;
   border-radius: 10px;
+}
+
+/*                           smiles */
+.smiles {
+  height: 50px;
+  background-color: #F3EEEA;
+  display: flex;
+  align-items: center;
+}
+
+.smiles i {
+  margin: 0;
+  padding: 0;
 }
 
 /*                             mediaqueries */
