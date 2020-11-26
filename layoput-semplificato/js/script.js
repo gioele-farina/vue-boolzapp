@@ -54,7 +54,8 @@ var app =new Vue({
           ],
         attivo: false,
         ultimoRicevuto: {},
-        visibile: true
+        visibile: true,
+        inElenco: true
       },
 
       {
@@ -103,7 +104,8 @@ var app =new Vue({
           ],
         attivo: false,
         ultimoRicevuto: {},
-        visibile: true
+        visibile: true,
+        inElenco: true
       },
 
       {
@@ -146,7 +148,28 @@ var app =new Vue({
           ],
         attivo: false,
         ultimoRicevuto: {},
-        visibile: true
+        visibile: true,
+        inElenco: true
+      },
+
+      {
+        nome: "Jessico",
+        cognome: "Calcetto",
+        avatar: "img/avatar_4.jpg",
+        ultimoAcceso: "24/11/2020 00.52",
+        chat:
+          [
+            {
+              messaggio : "",
+              mittente: "msgCookie",
+              data: "",
+              showMenu: false
+            }
+          ],
+        attivo: false,
+        ultimoRicevuto: {},
+        visibile: true,
+        inElenco: false
       }
 
     ]
@@ -168,7 +191,11 @@ var app =new Vue({
             return messaggio;
           }
         });
-        contatto.ultimoRicevuto = soloRicevuti[soloRicevuti.length - 1];
+        if (soloRicevuti > 0) {
+          contatto.ultimoRicevuto = soloRicevuti[soloRicevuti.length - 1];
+        } else {
+          contatto.ultimoRicevuto = ""; //per le chat vuote
+        }
       });
 
       // per ogni contatto assegno a ultimoAcceso il valore di ultimoRicevuto.data
@@ -247,6 +274,11 @@ var app =new Vue({
         app.$set(app.utenteAttivo.chat, app.utenteAttivo.chat.length, messaggio);
         // pulisco il prompt
         app.messaggioInserito = "";
+
+        // se il contatto della chat non era in elenco ce lo mette
+        if (app.utenteAttivo.inElenco === false) {
+          app.utenteAttivo.inElenco = true;
+        }
 
         // avvio risposta automatica
         app.riceviRisposta();
