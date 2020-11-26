@@ -19,6 +19,20 @@
   </head>
   <body>
 
+    <!-- Funzionalità inserite
+    - versione desktop e mobile
+    - ultimo accesso contatti = loro ultimo messaggio
+    - anteprima ultimo messaggio chat
+    - scrittura messaggi e risposta automatica
+    - giurato ester egg
+    - cancellazione dei messaggi
+    - funzione di ricerca
+    - mostro solo le chat con almeno un messaggio
+    - contatti nascosti con possibilità di iniziare una chat
+    - possibilità di aprire il menu emoji (non inseribili)
+    - scroll automatico della chat in basso
+   -->
+
     <!-- app vue -->
     <div id="app">
 
@@ -272,9 +286,22 @@
 
           <!-- message -->
           <div class="message">
-            <i class="far fa-smile"></i>
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.13="scrivi" v-model="messaggioInserito">
-            <i class="fas fa-microphone" @click="scrivi()"></i>
+
+            <div class="smiles" v-if="smiles">
+              <i class="far fa-smile"></i>
+              <i class="far fa-smile-wink"></i>
+              <i class="far fa-smile-beam"></i>
+              <i class="fas fa-poo"></i>
+              <i class="far fa-grin-squint-tears"></i>
+              <i class="far fa-grin-hearts"></i>
+              <i class="far fa-grin-beam-sweat"></i>
+            </div>
+
+            <div class="input-area">
+              <i class="far fa-smile" @click="showSmiles()"></i>
+              <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.13="scrivi" v-model="messaggioInserito">
+              <i class="fas fa-microphone" @click="scrivi()"></i>
+            </div>
           </div>
 
       </div>

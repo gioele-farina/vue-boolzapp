@@ -393,8 +393,8 @@ var app =new Vue({
     },
 
     showSmiles: function(){
-      this.smiles = !(this.smiles); 
+      this.smiles = !(this.smiles);
     }
-
+    
   }
 });
